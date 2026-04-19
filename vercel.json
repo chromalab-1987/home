@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/test/:path*",
+      "destination": "https://test-nine-theta-61.vercel.app/:path*"
+    },
+    {
+      "source": "/app/:path*",
+      "destination": "https://chroma-app-one.vercel.app/:path*"
+    }
+  ]
+}

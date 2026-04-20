@@ -557,6 +557,130 @@
     text-align: left;
   }
 
+  /* ─── REDES SOCIALES ─── */
+  #redes {
+    padding: 100px 60px;
+    background: var(--bg);
+    text-align: center;
+  }
+  #redes h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 16px;
+  }
+  #redes > p {
+    max-width: 580px;
+    margin: 0 auto 64px;
+    color: var(--text);
+  }
+
+  .redes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto 72px;
+    text-align: left;
+  }
+
+  .redes-proceso {
+    max-width: 1100px;
+    margin: 0 auto 72px;
+    text-align: left;
+  }
+  .redes-proceso-title {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--purple);
+    margin-bottom: 28px;
+    display: block;
+    text-align: center;
+  }
+  .redes-steps {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+    position: relative;
+  }
+  .redes-steps::before {
+    content: '';
+    position: absolute;
+    top: 18px;
+    left: 10%;
+    right: 10%;
+    height: 1px;
+    background: rgba(139,92,246,0.2);
+    z-index: 0;
+  }
+  .redes-step {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+  .redes-step-dot {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    border: 1px solid rgba(139,92,246,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 12px;
+    font-size: 0.75rem;
+    color: var(--purple-light);
+    background: var(--bg);
+    font-weight: 500;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .redes-step-label {
+    font-size: 0.72rem;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    font-weight: 300;
+  }
+
+  .redes-plataformas {
+    max-width: 1100px;
+    margin: 0 auto 64px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  .redes-tag {
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border: 1px solid rgba(139,92,246,0.18);
+    padding: 7px 16px;
+    border-radius: 30px;
+    font-weight: 400;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .redes-tag:hover {
+    border-color: rgba(139,92,246,0.5);
+    color: var(--purple-light);
+  }
+
+  .redes-cta {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-top: 40px;
+    border-top: 1px solid rgba(139,92,246,0.12);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .redes-cta-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    color: var(--muted);
+    font-style: italic;
+  }
+
   /* ─── ANÁLISIS ─── */
   #analisis {
     padding: 100px 60px;
@@ -874,11 +998,15 @@
     .hero-visual { display: none; }
     .cards-grid { grid-template-columns: 1fr; }
     .services-grid { grid-template-columns: 1fr; }
+    .redes-grid { grid-template-columns: 1fr; }
+    .redes-steps { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .redes-steps::before { display: none; }
+    .redes-cta { flex-direction: column; align-items: center; text-align: center; }
     .features-grid { grid-template-columns: 1fr; }
     .adn-inner { grid-template-columns: 1fr; gap: 40px; }
     .adn-visual { display: none; }
     section { padding-left: 24px; padding-right: 24px; }
-    #metodologia, #servicios, #analisis, #cta, #contacto { padding-left: 24px; padding-right: 24px; }
+    #metodologia, #servicios, #redes, #analisis, #cta, #contacto { padding-left: 24px; padding-right: 24px; }
     footer { flex-direction: column; gap: 24px; padding: 32px 24px; text-align: center; }
     .dashboard-wrap { height: 200px; }
   }
@@ -897,6 +1025,7 @@
     <li><a href="#adn">ADN Visual</a></li>
     <li><a href="#servicios">Servicios</a></li>
     <li><a href="#analisis">Análisis</a></li>
+    <li><a href="#redes">Redes</a></li>
     <li><a href="#ecosistema">Herramientas</a></li>
   </ul>
   <a href="https://chroma-app-one.vercel.app" target="_blank" class="btn-primary">Analizar sitio →</a>
@@ -1152,6 +1281,92 @@
       <h3>Social Branding</h3>
       <p>Estrategia visual para redes sociales que mantiene la coherencia de marca en cada publicación.</p>
     </div>
+  </div>
+</section>
+
+<!-- REDES SOCIALES -->
+<section id="redes">
+  <span class="label reveal">Presencia Digital</span>
+  <h2 class="reveal">Tu identidad vive<br><em>también en las redes</em></h2>
+  <p class="reveal">La identidad de una marca no termina en el logo. Se construye día a día en cada publicación, cada historia, cada interacción. Gestionamos tu presencia digital con la misma profundidad con la que concebimos tu identidad.</p>
+
+  <div class="redes-grid">
+    <div class="card reveal">
+      <div class="card-icon">🗺️</div>
+      <div class="card-num">01</div>
+      <h3>Estrategia de contenido</h3>
+      <p>Definimos voz, tono, pilares temáticos y narrativa. Una hoja de ruta que traduce quién sos en lo que publicás.</p>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">📅</div>
+      <div class="card-num">02</div>
+      <h3>Calendario editorial</h3>
+      <p>Planificación mensual con fechas, formatos y textos. La consistencia convierte una marca en referente.</p>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">🎞️</div>
+      <div class="card-num">03</div>
+      <h3>Diseño & contenido visual</h3>
+      <p>Piezas gráficas, carruseles, historias y reels construidos desde tu identidad. No contenido genérico: extensiones de tu marca.</p>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">💬</div>
+      <div class="card-num">04</div>
+      <h3>Gestión & comunidad</h3>
+      <p>Publicación, monitoreo y respuesta activa. Tu marca presente, con criterio y coherencia, en cada punto de contacto.</p>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">📊</div>
+      <div class="card-num">05</div>
+      <h3>Reportes & métricas</h3>
+      <p>Informes mensuales con alcance, engagement y evolución. Datos que no solo miden: orientan las decisiones que vienen.</p>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">✦</div>
+      <div class="card-num">06</div>
+      <h3>Identidad en redes</h3>
+      <p>Adaptamos tu identidad al lenguaje de cada plataforma sin perder el hilo de quién sos. Coherencia que profundiza el reconocimiento.</p>
+    </div>
+  </div>
+
+  <div class="redes-proceso reveal">
+    <span class="redes-proceso-title">Nuestro proceso</span>
+    <div class="redes-steps">
+      <div class="redes-step">
+        <div class="redes-step-dot">1</div>
+        <div class="redes-step-label">Diagnóstico</div>
+      </div>
+      <div class="redes-step">
+        <div class="redes-step-dot">2</div>
+        <div class="redes-step-label">Estrategia</div>
+      </div>
+      <div class="redes-step">
+        <div class="redes-step-dot">3</div>
+        <div class="redes-step-label">Producción</div>
+      </div>
+      <div class="redes-step">
+        <div class="redes-step-dot">4</div>
+        <div class="redes-step-label">Publicación</div>
+      </div>
+      <div class="redes-step">
+        <div class="redes-step-dot">5</div>
+        <div class="redes-step-label">Análisis</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="redes-plataformas reveal">
+    <span class="redes-tag">Instagram</span>
+    <span class="redes-tag">Facebook</span>
+    <span class="redes-tag">LinkedIn</span>
+    <span class="redes-tag">TikTok</span>
+  </div>
+
+  <div class="redes-cta reveal">
+    <p class="redes-cta-quote">"Profundidad que transforma, también en pantalla."</p>
+    <a href="https://calendly.com/labid-chroma/30min" target="_blank" class="btn-hero" style="box-shadow:0 0 30px rgba(139,92,246,0.3);">
+      Hablemos de tu presencia digital &nbsp;→
+    </a>
   </div>
 </section>
 

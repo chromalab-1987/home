@@ -1,0 +1,1721 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ChromaLab · Laboratorio de Identidad Visual</title>
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="ChromaLab es un laboratorio de identidad visual. Analizamos tu marca, diagnosticamos tu ADN visual y transformamos tu identidad en una ventaja competitiva con herramientas estratégicas.">
+  <meta name="keywords" content="identidad visual, branding, diseño de marca, ADN visual, auditoría visual, branding corporativo, diseño editorial, social branding">
+  <meta name="author" content="ChromaLab">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.chromalab.com.ar/">
+
+  <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.chromalab.com.ar/">
+  <meta property="og:title" content="ChromaLab · Laboratorio de Identidad Visual">
+  <meta property="og:description" content="Diagnosticamos y transformamos tu identidad visual. Test de ADN Visual, Analizador de Sitios y Auditorías con especialistas.">
+  <meta property="og:image" content="https://www.chromalab.com.ar/logo.jpg">
+  <meta property="og:locale" content="es_AR">
+  <meta property="og:site_name" content="ChromaLab">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ChromaLab · Laboratorio de Identidad Visual">
+  <meta name="twitter:description" content="Diagnosticamos y transformamos tu identidad visual. Test de ADN Visual, Analizador de Sitios y Auditorías con especialistas.">
+  <meta name="twitter:image" content="https://www.chromalab.com.ar/logo.jpg">
+
+  <!-- Schema.org (Legibilidad para IA y buscadores) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "ChromaLab",
+    "description": "Laboratorio de identidad visual. Analizamos marcas, diagnosticamos ADN visual y transformamos identidades en ventajas competitivas.",
+    "url": "https://www.chromalab.com.ar",
+    "logo": "https://www.chromalab.com.ar/logo.jpg",
+    "image": "https://www.chromalab.com.ar/logo.jpg",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "AR"
+    },
+    "sameAs": [],
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Test de ADN Visual",
+        "description": "36 preguntas que mapean las 6 dimensiones del ADN visual de tu marca.",
+        "url": "https://test.chromalab.com.ar/"
+      },
+      {
+        "@type": "Offer",
+        "name": "Analizador de Identidad Visual",
+        "description": "Diagnóstico profesional de identidad visual de cualquier sitio web.",
+        "url": "https://chroma-app-one.vercel.app"
+      },
+      {
+        "@type": "Offer",
+        "name": "Auditoría con Especialista",
+        "description": "Sesión estratégica de 30 minutos con un especialista de ChromaLab.",
+        "url": "https://calendly.com/labid-chroma/30min"
+      }
+    ]
+  }
+  </script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700;1,800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #09090f;
+    --bg2: #0f0f1a;
+    --card: #111120;
+    --card-border: rgba(139,92,246,0.18);
+    --purple: #8b5cf6;
+    --purple-light: #a78bfa;
+    --pink: #d946ef;
+    --white: #f0eeff;
+    --muted: #6b6b8a;
+    --text: #c4c4d8;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ─── NOISE OVERLAY ─── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    background-size: 200px;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.5;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 60px;
+    background: rgba(9,9,15,0.85);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(139,92,246,0.08);
+    transition: all 0.3s;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+  .logo-icon {
+    width: 38px; height: 38px;
+    flex-shrink: 0;
+  }
+  .logo-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .logo-text {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    color: var(--white);
+  }
+  .logo-text span { color: var(--purple); }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    list-style: none;
+  }
+  .nav-links a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 400;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--white); }
+
+  .btn-primary {
+    background: var(--purple);
+    color: #fff;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 30px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-primary:hover {
+    background: var(--purple-light);
+    transform: translateY(-1px);
+  }
+
+  .btn-secondary {
+    background: rgba(255,255,255,0.06);
+    color: var(--white);
+    border: 1px solid rgba(255,255,255,0.12);
+    padding: 13px 28px;
+    border-radius: 30px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 400;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s;
+  }
+  .btn-secondary:hover {
+    background: rgba(255,255,255,0.1);
+    transform: translateY(-1px);
+  }
+
+  /* ─── SECTIONS ─── */
+  section { position: relative; z-index: 1; }
+
+  .label {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--purple);
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--white);
+    line-height: 1.1;
+  }
+
+  em, i {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    background: linear-gradient(135deg, var(--purple-light), var(--pink));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* ─── HERO ─── */
+  #hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 120px 60px 80px;
+    gap: 60px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  #hero::before {
+    content: '';
+    position: absolute;
+    top: -200px; left: -200px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(139,92,246,0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 28px;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--purple);
+    box-shadow: 0 0 12px var(--purple);
+  }
+  .hero-eyebrow span {
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .hero-title {
+    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    margin-bottom: 24px;
+  }
+
+  .hero-desc {
+    font-size: 1.05rem;
+    color: var(--text);
+    max-width: 480px;
+    margin-bottom: 40px;
+    line-height: 1.75;
+  }
+
+  .hero-ctas {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 64px;
+  }
+
+  .btn-hero {
+    background: var(--purple);
+    color: #fff;
+    border: none;
+    padding: 14px 30px;
+    border-radius: 30px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.2s;
+    box-shadow: 0 0 30px rgba(139,92,246,0.35);
+  }
+  .btn-hero:hover {
+    background: var(--purple-light);
+    transform: translateY(-2px);
+    box-shadow: 0 0 45px rgba(139,92,246,0.5);
+  }
+
+  .stats {
+    display: flex;
+    gap: 48px;
+  }
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--white);
+  }
+  .stat-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+
+  /* Hero visual */
+  .hero-visual {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-img-wrap {
+    width: 100%;
+    aspect-ratio: 4/3;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #1a1030 0%, #0d0820 50%, #120d28 100%);
+    border: 1px solid rgba(139,92,246,0.2);
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 0 80px rgba(139,92,246,0.12);
+  }
+
+  /* DNA SVG animation */
+  .dna-container {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .dna-svg {
+    width: 100%;
+    height: 100%;
+    opacity: 0.85;
+  }
+
+  @keyframes dnaFloat {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-12px) rotate(2deg); }
+  }
+  .dna-container { animation: dnaFloat 6s ease-in-out infinite; }
+
+  .hero-badge {
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    background: rgba(15,15,30,0.9);
+    border: 1px solid rgba(139,92,246,0.3);
+    border-radius: 12px;
+    padding: 14px 20px;
+    backdrop-filter: blur(12px);
+  }
+  .hero-badge-label {
+    font-size: 0.7rem;
+    color: var(--muted);
+    margin-bottom: 4px;
+    letter-spacing: 0.1em;
+  }
+  .hero-badge-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--purple-light);
+    font-style: italic;
+  }
+
+  /* Glow orbs */
+  .orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  /* ─── METODOLOGÍA ─── */
+  #metodologia {
+    padding: 100px 60px;
+    background: var(--bg2);
+    text-align: center;
+  }
+  #metodologia h2 {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    margin-bottom: 16px;
+  }
+  #metodologia > p {
+    max-width: 600px;
+    margin: 0 auto 64px;
+    color: var(--text);
+  }
+
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: left;
+  }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 32px;
+    transition: border-color 0.3s, transform 0.2s, box-shadow 0.3s;
+  }
+  .card:hover {
+    border-color: rgba(139,92,246,0.4);
+    transform: translateY(-4px);
+    box-shadow: 0 16px 48px rgba(139,92,246,0.1);
+  }
+
+  .card-icon {
+    width: 44px; height: 44px;
+    background: rgba(139,92,246,0.15);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+  }
+
+  .card-num {
+    font-size: 0.75rem;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    margin-bottom: 12px;
+    font-weight: 400;
+  }
+
+  .card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 12px;
+    font-family: 'Playfair Display', serif;
+  }
+
+  .card p {
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+
+  /* ─── ADN VISUAL ─── */
+  #adn {
+    padding: 100px 60px;
+    background: var(--bg2);
+  }
+
+  .adn-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .adn-visual {
+    position: relative;
+    aspect-ratio: 1;
+    border-radius: 20px;
+    overflow: hidden;
+    background: radial-gradient(ellipse at center, #2a1060 0%, #0d0820 60%, #09090f 100%);
+    border: 1px solid rgba(139,92,246,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 80px rgba(139,92,246,0.12);
+  }
+
+  .globe-svg {
+    width: 85%;
+    height: 85%;
+  }
+
+  @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+  @keyframes spinReverse { from { transform: rotate(0deg); } to { transform: rotate(-360deg); } }
+  .ring1 { animation: spin 8s linear infinite; transform-origin: center; }
+  .ring2 { animation: spinReverse 12s linear infinite; transform-origin: center; }
+  .ring3 { animation: spin 16s linear infinite; transform-origin: center; }
+
+  .exclusivo-badge {
+    position: absolute;
+    top: 20px;
+    right: -12px;
+    background: var(--purple);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 8px 20px;
+    border-radius: 20px;
+    letter-spacing: 0.05em;
+  }
+
+  #adn .content { }
+  #adn h2 {
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    margin-bottom: 20px;
+  }
+  #adn .desc {
+    color: var(--text);
+    margin-bottom: 16px;
+    line-height: 1.75;
+  }
+
+  .arquetipos-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 28px 0 36px;
+  }
+
+  /* Force side-by-side on all screens */
+  @media (max-width: 600px) {
+    .arquetipos-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+    .arquetipo-card {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+      padding: 12px;
+    }
+  }
+
+  .arquetipo-card {
+    background: var(--card);
+    border: 1px solid rgba(139,92,246,0.15);
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .arquetipo-icon {
+    width: 36px; height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+  .aq-yellow { background: #f59e0b22; }
+  .aq-red { background: #ef444422; }
+  .aq-green { background: #22c55e22; }
+  .aq-blue { background: #3b82f622; }
+
+  .arquetipo-name {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--white);
+    margin-bottom: 2px;
+  }
+  .arquetipo-desc {
+    font-size: 0.75rem;
+    color: var(--muted);
+  }
+
+  /* ─── SERVICIOS ─── */
+  #servicios {
+    padding: 100px 60px;
+    background: var(--bg2);
+    text-align: center;
+  }
+  #servicios h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 16px;
+  }
+  #servicios > p {
+    max-width: 580px;
+    margin: 0 auto 64px;
+    color: var(--text);
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: left;
+  }
+
+  /* ─── REDES SOCIALES ─── */
+  #redes {
+    padding: 100px 60px;
+    background: var(--bg);
+    text-align: center;
+  }
+  #redes h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 16px;
+  }
+  #redes > p {
+    max-width: 580px;
+    margin: 0 auto 64px;
+    color: var(--text);
+  }
+
+  .redes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto 72px;
+    text-align: left;
+  }
+
+  .redes-proceso {
+    max-width: 1100px;
+    margin: 0 auto 72px;
+    text-align: left;
+  }
+  .redes-proceso-title {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--purple);
+    margin-bottom: 28px;
+    display: block;
+    text-align: center;
+  }
+  .redes-steps {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+    position: relative;
+  }
+  .redes-steps::before {
+    content: '';
+    position: absolute;
+    top: 18px;
+    left: 10%;
+    right: 10%;
+    height: 1px;
+    background: rgba(139,92,246,0.2);
+    z-index: 0;
+  }
+  .redes-step {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+  .redes-step-dot {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    border: 1px solid rgba(139,92,246,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 12px;
+    font-size: 0.75rem;
+    color: var(--purple-light);
+    background: var(--bg);
+    font-weight: 500;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .redes-step-label {
+    font-size: 0.72rem;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    font-weight: 300;
+  }
+
+  .redes-plataformas {
+    max-width: 1100px;
+    margin: 0 auto 64px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  .redes-tag {
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border: 1px solid rgba(139,92,246,0.18);
+    padding: 7px 16px;
+    border-radius: 30px;
+    font-weight: 400;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .redes-tag:hover {
+    border-color: rgba(139,92,246,0.5);
+    color: var(--purple-light);
+  }
+
+  .redes-cta {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-top: 40px;
+    border-top: 1px solid rgba(139,92,246,0.12);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .redes-cta-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  /* ─── ANÁLISIS ─── */
+  #analisis {
+    padding: 100px 60px;
+    text-align: center;
+  }
+  #analisis h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 16px;
+  }
+  #analisis > p {
+    max-width: 600px;
+    margin: 0 auto 56px;
+    color: var(--text);
+  }
+
+  .dashboard-wrap {
+    max-width: 1000px;
+    margin: 0 auto 64px;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(139,92,246,0.2);
+    background: linear-gradient(160deg, #0f0825 0%, #0a0a1a 100%);
+    height: 300px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 80px rgba(139,92,246,0.1);
+  }
+
+  .dashboard-inner {
+    display: flex;
+    gap: 20px;
+    padding: 24px;
+    width: 100%;
+    height: 100%;
+  }
+
+  .dash-panel {
+    flex: 1;
+    background: rgba(139,92,246,0.06);
+    border: 1px solid rgba(139,92,246,0.15);
+    border-radius: 12px;
+    padding: 16px;
+    text-align: left;
+  }
+  .dash-panel-title {
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 12px;
+  }
+  .dash-bar {
+    height: 6px;
+    background: rgba(139,92,246,0.12);
+    border-radius: 3px;
+    margin-bottom: 6px;
+    overflow: hidden;
+    position: relative;
+  }
+  .dash-bar::after {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    background: linear-gradient(90deg, var(--purple), var(--pink));
+    border-radius: 3px;
+  }
+  .b1::after { width: 75%; }
+  .b2::after { width: 55%; }
+  .b3::after { width: 88%; }
+  .b4::after { width: 42%; }
+
+  .dash-mini-chart {
+    margin-top: 10px;
+    height: 50px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: left;
+  }
+
+  .feature-card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    transition: border-color 0.3s, transform 0.2s;
+  }
+  .feature-card:hover {
+    border-color: rgba(139,92,246,0.35);
+    transform: translateY(-3px);
+  }
+  .feature-icon {
+    width: 38px; height: 38px;
+    background: rgba(139,92,246,0.12);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 1rem;
+  }
+  .feature-content h4 {
+    font-family: 'Playfair Display', serif;
+    color: var(--white);
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+    font-weight: 700;
+  }
+  .feature-content p {
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* ─── CTA FINAL ─── */
+  #cta {
+    padding: 120px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  #cta::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px; height: 400px;
+    background: radial-gradient(ellipse, rgba(139,92,246,0.1) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  #cta h2 {
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    margin-bottom: 20px;
+  }
+  #cta p {
+    max-width: 520px;
+    margin: 0 auto 40px;
+    color: var(--text);
+    line-height: 1.75;
+  }
+  .cta-sub {
+    margin-top: 20px;
+    font-size: 0.8rem;
+    color: var(--muted);
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+  .cta-sub span::before { content: '· '; }
+
+  /* ─── CONTACTO ─── */
+  #contacto {
+    padding: 100px 60px;
+    background: var(--bg2);
+    text-align: center;
+  }
+  #contacto h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 12px;
+  }
+  #contacto > p {
+    color: var(--text);
+    margin-bottom: 48px;
+  }
+
+  .contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 20px;
+    padding: 40px;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  .form-group label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.82rem;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px;
+    padding: 14px 16px;
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .form-group input::placeholder,
+  .form-group textarea::placeholder { color: var(--muted); }
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: rgba(139,92,246,0.5);
+  }
+  .form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  .btn-submit {
+    width: 100%;
+    background: linear-gradient(135deg, var(--purple), #6d28d9);
+    color: #fff;
+    border: none;
+    padding: 16px;
+    border-radius: 30px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 8px;
+    transition: all 0.2s;
+    box-shadow: 0 0 30px rgba(139,92,246,0.3);
+  }
+  .btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 50px rgba(139,92,246,0.45);
+  }
+
+  .form-success {
+    display: none;
+    padding: 20px;
+    background: rgba(139,92,246,0.1);
+    border: 1px solid rgba(139,92,246,0.3);
+    border-radius: 12px;
+    color: var(--purple-light);
+    margin-top: 16px;
+    text-align: center;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    border-top: 1px solid rgba(255,255,255,0.05);
+    padding: 40px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+  .footer-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.875rem;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--white); }
+
+  .footer-copy {
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .fade-up { animation: fadeUp 0.7s ease forwards; }
+  .delay-1 { animation-delay: 0.1s; opacity: 0; }
+  .delay-2 { animation-delay: 0.2s; opacity: 0; }
+  .delay-3 { animation-delay: 0.35s; opacity: 0; }
+  .delay-4 { animation-delay: 0.5s; opacity: 0; }
+
+  /* Scroll reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    #hero { grid-template-columns: 1fr; padding: 100px 24px 60px; }
+    .hero-visual { display: none; }
+    .cards-grid { grid-template-columns: 1fr; }
+    .services-grid { grid-template-columns: 1fr; }
+    .redes-grid { grid-template-columns: 1fr; }
+    .redes-steps { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .redes-steps::before { display: none; }
+    .redes-cta { flex-direction: column; align-items: center; text-align: center; }
+    .features-grid { grid-template-columns: 1fr; }
+    .adn-inner { grid-template-columns: 1fr; gap: 40px; }
+    .adn-visual { display: none; }
+    section { padding-left: 24px; padding-right: 24px; }
+    #metodologia, #servicios, #redes, #analisis, #cta, #contacto { padding-left: 24px; padding-right: 24px; }
+    footer { flex-direction: column; gap: 24px; padding: 32px 24px; text-align: center; }
+    .dashboard-wrap { height: 200px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">
+    <div class="logo-icon"><img src="logo.jpg" alt="ChromaLab logo"></div>
+    <span class="logo-text">CHROMA<span>LAB</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#metodologia">Metodología</a></li>
+    <li><a href="#adn">ADN Visual</a></li>
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#analisis">Análisis</a></li>
+    <li><a href="#redes">Redes</a></li>
+    <li><a href="#ecosistema">Herramientas</a></li>
+  </ul>
+  <a href="https://chroma-app-one.vercel.app" target="_blank" class="btn-primary">Analizar sitio →</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <span>Laboratorio de Identidad</span>
+    </div>
+    <h1 class="hero-title fade-up delay-1">
+      Profundidad que<br><em>transforma</em>
+    </h1>
+    <p class="hero-desc fade-up delay-2">
+      CHROMA redefine la identidad corporativa a través de una metodología científica de análisis visual. Descubrí el código genético de tu marca.
+    </p>
+    <div class="hero-ctas fade-up delay-3">
+      <a href="https://test.chromalab.com.ar/" target="_blank" class="btn-hero">
+        ✦ Iniciar ADN Visual &nbsp;→
+      </a>
+      <a href="#metodologia" class="btn-secondary">Conocer más</a>
+    </div>
+    <div class="stats fade-up delay-4">
+      <div>
+        <div class="stat-num">36</div>
+        <div class="stat-label">Preguntas</div>
+      </div>
+      <div>
+        <div class="stat-num">6</div>
+        <div class="stat-label">Dimensiones</div>
+      </div>
+      <div>
+        <div class="stat-num">4</div>
+        <div class="stat-label">Arquetipos</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="hero-img-wrap">
+      <div class="dna-container">
+        <svg class="dna-svg" viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="bgGrad" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#2a1060" stop-opacity="0.8"/>
+              <stop offset="100%" stop-color="#09090f" stop-opacity="0"/>
+            </radialGradient>
+            <filter id="glow">
+              <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+              <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <ellipse cx="250" cy="200" rx="200" ry="160" fill="url(#bgGrad)"/>
+          <!-- DNA Strands -->
+          <g filter="url(#glow)">
+            <!-- Left strand -->
+            <path d="M 160 50 C 200 80 160 130 200 160 C 240 190 200 240 240 270 C 280 300 240 340 280 360"
+              stroke="#8b5cf6" stroke-width="2.5" fill="none" opacity="0.8"/>
+            <!-- Right strand -->
+            <path d="M 280 50 C 240 80 280 130 240 160 C 200 190 240 240 200 270 C 160 300 200 340 160 360"
+              stroke="#d946ef" stroke-width="2.5" fill="none" opacity="0.8"/>
+            <!-- Rungs -->
+            <line x1="167" y1="78" x2="273" y2="78" stroke="#a78bfa" stroke-width="1.5" opacity="0.6"/>
+            <line x1="175" y1="115" x2="265" y2="115" stroke="#a78bfa" stroke-width="1.5" opacity="0.5"/>
+            <line x1="192" y1="152" x2="248" y2="152" stroke="#a78bfa" stroke-width="1.5" opacity="0.6"/>
+            <line x1="218" y1="182" x2="222" y2="182" stroke="#a78bfa" stroke-width="1.5" opacity="0.4"/>
+            <line x1="208" y1="215" x2="232" y2="215" stroke="#a78bfa" stroke-width="1.5" opacity="0.5"/>
+            <line x1="190" y1="252" x2="250" y2="252" stroke="#a78bfa" stroke-width="1.5" opacity="0.6"/>
+            <line x1="172" y1="288" x2="268" y2="288" stroke="#a78bfa" stroke-width="1.5" opacity="0.5"/>
+            <line x1="190" y1="330" x2="250" y2="330" stroke="#a78bfa" stroke-width="1.5" opacity="0.4"/>
+            <!-- Nodes -->
+            <circle cx="160" cy="50" r="5" fill="#8b5cf6"/>
+            <circle cx="280" cy="50" r="5" fill="#d946ef"/>
+            <circle cx="200" cy="160" r="5" fill="#8b5cf6"/>
+            <circle cx="240" cy="160" r="5" fill="#d946ef"/>
+            <circle cx="240" cy="270" r="5" fill="#8b5cf6"/>
+            <circle cx="200" cy="270" r="5" fill="#d946ef"/>
+            <circle cx="280" cy="360" r="5" fill="#8b5cf6"/>
+            <circle cx="160" cy="360" r="5" fill="#d946ef"/>
+          </g>
+          <!-- Floating dots -->
+          <circle cx="80" cy="100" r="2" fill="#8b5cf6" opacity="0.4"/>
+          <circle cx="420" cy="150" r="3" fill="#d946ef" opacity="0.4"/>
+          <circle cx="60" cy="280" r="2" fill="#a78bfa" opacity="0.3"/>
+          <circle cx="440" cy="320" r="2" fill="#8b5cf6" opacity="0.3"/>
+          <circle cx="100" cy="350" r="3" fill="#d946ef" opacity="0.2"/>
+        </svg>
+      </div>
+      <div class="hero-badge">
+        <div class="hero-badge-label">Diagnóstico</div>
+        <div class="hero-badge-value">Instantáneo</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Glow orbs -->
+  <div class="orb" style="width:400px;height:400px;background:radial-gradient(circle,rgba(139,92,246,0.08),transparent);top:-100px;right:10%;"></div>
+</section>
+
+<!-- METODOLOGÍA -->
+<section id="metodologia">
+  <span class="label reveal">Nuestra Metodología</span>
+  <h2 class="reveal">Análisis profundo para marcas<br>con <em>propósito comercial</em></h2>
+  <p class="reveal">Tres fases diseñadas para revelar el potencial oculto de tu marca y transformar tu identidad visual en una ventaja competitiva.</p>
+
+  <div class="cards-grid">
+    <div class="card reveal">
+      <div class="card-icon">⬛</div>
+      <div class="card-num">01</div>
+      <h3>Estratificación Visual</h3>
+      <p>Desglosamos cada elemento de tu comunicación para entender las capas de significado subyacentes.</p>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">🔍</div>
+      <div class="card-num">02</div>
+      <h3>Diagnóstico de ADN</h3>
+      <p>Identificamos patrones recurrentes y anomalías visuales que definen tu posición actual en el mercado.</p>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">✦</div>
+      <div class="card-num">03</div>
+      <h3>Síntesis Creativa</h3>
+      <p>Reconstruimos tu identidad proyectando un futuro de coherencia, elegancia y alto impacto visual.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ADN VISUAL -->
+<section id="adn" style="padding:100px 60px;background:var(--bg2);">
+  <div class="adn-inner">
+    <div class="adn-visual reveal">
+      <svg class="globe-svg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="globeGrad" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#4c1d95" stop-opacity="0.6"/>
+            <stop offset="100%" stop-color="#09090f" stop-opacity="0"/>
+          </radialGradient>
+          <filter id="glow2">
+            <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+            <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <circle cx="200" cy="200" r="120" fill="url(#globeGrad)" stroke="rgba(139,92,246,0.3)" stroke-width="1"/>
+        <g filter="url(#glow2)" class="ring1" style="transform-box:fill-box;">
+          <ellipse cx="200" cy="200" rx="140" ry="50" fill="none" stroke="#8b5cf6" stroke-width="1.5" opacity="0.7"/>
+        </g>
+        <g filter="url(#glow2)" class="ring2" style="transform-box:fill-box;">
+          <ellipse cx="200" cy="200" rx="110" ry="140" fill="none" stroke="#d946ef" stroke-width="1.5" opacity="0.5"/>
+        </g>
+        <g filter="url(#glow2)" class="ring3" style="transform-box:fill-box;">
+          <ellipse cx="200" cy="200" rx="90" ry="90" fill="none" stroke="#a78bfa" stroke-width="1" opacity="0.4"/>
+        </g>
+        <!-- Nodes on globe -->
+        <circle cx="200" cy="80" r="6" fill="#8b5cf6" filter="url(#glow2)"/>
+        <circle cx="310" cy="160" r="5" fill="#f59e0b" filter="url(#glow2)"/>
+        <circle cx="280" cy="290" r="5" fill="#ef4444" filter="url(#glow2)"/>
+        <circle cx="120" cy="280" r="5" fill="#22c55e" filter="url(#glow2)"/>
+        <circle cx="90" cy="160" r="5" fill="#3b82f6" filter="url(#glow2)"/>
+        <!-- Lines connecting nodes -->
+        <line x1="200" y1="80" x2="310" y2="160" stroke="rgba(139,92,246,0.4)" stroke-width="1"/>
+        <line x1="310" y1="160" x2="280" y2="290" stroke="rgba(217,70,239,0.4)" stroke-width="1"/>
+        <line x1="280" y1="290" x2="120" y2="280" stroke="rgba(139,92,246,0.4)" stroke-width="1"/>
+        <line x1="120" y1="280" x2="90" y2="160" stroke="rgba(217,70,239,0.4)" stroke-width="1"/>
+        <line x1="90" y1="160" x2="200" y2="80" stroke="rgba(139,92,246,0.4)" stroke-width="1"/>
+        <!-- Floating squares (logos) -->
+        <rect x="160" y="170" width="30" height="30" rx="5" fill="#1a1a2e" stroke="rgba(139,92,246,0.5)" stroke-width="1"/>
+        <rect x="205" y="190" width="28" height="28" rx="5" fill="#1a1a2e" stroke="rgba(217,70,239,0.5)" stroke-width="1"/>
+        <rect x="148" y="210" width="24" height="24" rx="4" fill="#1a1a2e" stroke="rgba(139,92,246,0.4)" stroke-width="1"/>
+        <rect x="225" y="155" width="26" height="26" rx="4" fill="#1a1a2e" stroke="rgba(217,70,239,0.4)" stroke-width="1"/>
+      </svg>
+      <div class="exclusivo-badge">Exclusivo CHROMA</div>
+    </div>
+
+    <div class="content reveal">
+      <span class="label">Exclusivo de Chroma</span>
+      <h2>El Test de <em>ADN Visual</em></h2>
+      <p class="desc">Tu identidad codificada. Hemos desarrollado una herramienta interactiva que clasifica tu estética en 4 arquetipos fundamentales.</p>
+      <p class="desc">36 preguntas para mapear las 6 dimensiones del ADN visual de tu marca y obtener un diagnóstico estratégico personalizado.</p>
+
+      <div class="arquetipos-grid">
+        <div class="arquetipo-card">
+          <div class="arquetipo-icon aq-yellow">⚡</div>
+          <div>
+            <div class="arquetipo-name">Dinámico</div>
+            <div class="arquetipo-desc">Energía pura y movimiento constante</div>
+          </div>
+        </div>
+        <div class="arquetipo-card">
+          <div class="arquetipo-icon aq-red">🔥</div>
+          <div>
+            <div class="arquetipo-name">Disruptivo</div>
+            <div class="arquetipo-desc">Ruptura radical de lo establecido</div>
+          </div>
+        </div>
+        <div class="arquetipo-card">
+          <div class="arquetipo-icon aq-green">🌿</div>
+          <div>
+            <div class="arquetipo-name">Orgánico</div>
+            <div class="arquetipo-desc">Formas naturales y equilibrio fluido</div>
+          </div>
+        </div>
+        <div class="arquetipo-card">
+          <div class="arquetipo-icon aq-blue">🏛</div>
+          <div>
+            <div class="arquetipo-name">Institucional</div>
+            <div class="arquetipo-desc">Solidez, confianza y estructura lineal</div>
+          </div>
+        </div>
+      </div>
+
+      <a href="https://test.chromalab.com.ar/" target="_blank" class="btn-hero" style="box-shadow:0 0 30px rgba(139,92,246,0.3);">
+        Averiguarlo AHORA &nbsp;→
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section id="servicios">
+  <span class="label reveal">Nuestros Servicios</span>
+  <h2 class="reveal">Todo lo que tu marca <em>necesita</em></h2>
+  <p class="reveal">Soluciones integrales de diseño y comunicación visual para construir marcas memorables y con impacto comercial.</p>
+
+  <div class="services-grid">
+    <div class="card reveal">
+      <div class="card-icon">🎨</div>
+      <h3>Comunicación Visual</h3>
+      <p>Diseño gráfico estratégico que traduce tu mensaje en piezas visuales de alto impacto para todos tus canales.</p>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">👆</div>
+      <h3>Identidad de Marca</h3>
+      <p>Creación y evolución de sistemas visuales únicos que reflejan la esencia y diferencial de tu empresa.</p>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">🏢</div>
+      <h3>Branding Corporativo</h3>
+      <p>Desarrollo integral de marca: desde la estrategia hasta cada punto de contacto con tu audiencia.</p>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">👁</div>
+      <h3>Auditoría Visual</h3>
+      <p>Análisis exhaustivo de tu presencia visual actual para detectar oportunidades de mejora y coherencia.</p>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">📖</div>
+      <h3>Diseño Editorial</h3>
+      <p>Brandbooks, catálogos y material corporativo diseñado con precisión y atención al detalle.</p>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">📣</div>
+      <h3>Social Branding</h3>
+      <p>Estrategia visual para redes sociales que mantiene la coherencia de marca en cada publicación.</p>
+    </div>
+  </div>
+</section>
+
+<!-- REDES SOCIALES -->
+<section id="redes">
+  <span class="label reveal">Presencia Digital</span>
+  <h2 class="reveal">Tu identidad vive<br><em>también en las redes</em></h2>
+  <p class="reveal">La identidad de una marca no termina en el logo. Se construye día a día en cada publicación, cada historia, cada interacción. Gestionamos tu presencia digital con la misma profundidad con la que concebimos tu identidad.</p>
+
+  <div class="redes-grid">
+    <div class="card reveal">
+      <div class="card-icon">🗺️</div>
+      <div class="card-num">01</div>
+      <h3>Estrategia de contenido</h3>
+      <p>Definimos voz, tono, pilares temáticos y narrativa. Una hoja de ruta que traduce quién sos en lo que publicás.</p>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">📅</div>
+      <div class="card-num">02</div>
+      <h3>Calendario editorial</h3>
+      <p>Planificación mensual con fechas, formatos y textos. La consistencia convierte una marca en referente.</p>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">🎞️</div>
+      <div class="card-num">03</div>
+      <h3>Diseño & contenido visual</h3>
+      <p>Piezas gráficas, carruseles, historias y reels construidos desde tu identidad. No contenido genérico: extensiones de tu marca.</p>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">💬</div>
+      <div class="card-num">04</div>
+      <h3>Gestión & comunidad</h3>
+      <p>Publicación, monitoreo y respuesta activa. Tu marca presente, con criterio y coherencia, en cada punto de contacto.</p>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">📊</div>
+      <div class="card-num">05</div>
+      <h3>Reportes & métricas</h3>
+      <p>Informes mensuales con alcance, engagement y evolución. Datos que no solo miden: orientan las decisiones que vienen.</p>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">✦</div>
+      <div class="card-num">06</div>
+      <h3>Identidad en redes</h3>
+      <p>Adaptamos tu identidad al lenguaje de cada plataforma sin perder el hilo de quién sos. Coherencia que profundiza el reconocimiento.</p>
+    </div>
+  </div>
+
+  <div class="redes-proceso reveal">
+    <span class="redes-proceso-title">Nuestro proceso</span>
+    <div class="redes-steps">
+      <div class="redes-step">
+        <div class="redes-step-dot">1</div>
+        <div class="redes-step-label">Diagnóstico</div>
+      </div>
+      <div class="redes-step">
+        <div class="redes-step-dot">2</div>
+        <div class="redes-step-label">Estrategia</div>
+      </div>
+      <div class="redes-step">
+        <div class="redes-step-dot">3</div>
+        <div class="redes-step-label">Producción</div>
+      </div>
+      <div class="redes-step">
+        <div class="redes-step-dot">4</div>
+        <div class="redes-step-label">Publicación</div>
+      </div>
+      <div class="redes-step">
+        <div class="redes-step-dot">5</div>
+        <div class="redes-step-label">Análisis</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="redes-plataformas reveal">
+    <span class="redes-tag">Instagram</span>
+    <span class="redes-tag">Facebook</span>
+    <span class="redes-tag">LinkedIn</span>
+    <span class="redes-tag">TikTok</span>
+  </div>
+
+  <div class="redes-cta reveal">
+    <p class="redes-cta-quote">"Profundidad que transforma, también en pantalla."</p>
+    <a href="https://calendly.com/labid-chroma/30min" target="_blank" class="btn-hero" style="box-shadow:0 0 30px rgba(139,92,246,0.3);">
+      Hablemos de tu presencia digital &nbsp;→
+    </a>
+  </div>
+</section>
+
+<!-- ANÁLISIS -->
+<section id="analisis">
+  <span class="label reveal">Plataforma de Análisis</span>
+  <h2 class="reveal">Tu sitio web bajo el <em>microscopio</em></h2>
+  <p class="reveal">Nuestro analizador examina la identidad visual de cualquier sitio web — color, tipografía, composición, consistencia y jerarquía — y devuelve un diagnóstico profesional en segundos.</p>
+
+  <div class="dashboard-wrap reveal">
+    <div class="dashboard-inner">
+      <div class="dash-panel">
+        <div class="dash-panel-title">Social Media Analytics</div>
+        <div class="dash-bar b3"></div>
+        <div class="dash-bar b1"></div>
+        <div class="dash-bar b4"></div>
+        <div class="dash-bar b2"></div>
+        <div class="dash-mini-chart">
+          <svg viewBox="0 0 120 50" width="100%" height="100%">
+            <polyline points="0,40 20,28 40,32 60,15 80,22 100,10 120,18"
+              fill="none" stroke="#8b5cf6" stroke-width="2"/>
+            <polyline points="0,40 20,28 40,32 60,15 80,22 100,10 120,18 120,50 0,50"
+              fill="rgba(139,92,246,0.1)"/>
+          </svg>
+        </div>
+      </div>
+      <div class="dash-panel">
+        <div class="dash-panel-title">Website Performance</div>
+        <div class="dash-bar b2"></div>
+        <div class="dash-bar b3"></div>
+        <div class="dash-bar b1"></div>
+        <div class="dash-bar b4"></div>
+        <div class="dash-mini-chart">
+          <svg viewBox="0 0 120 50" width="100%" height="100%">
+            <polyline points="0,45 20,35 40,20 60,30 80,15 100,25 120,5"
+              fill="none" stroke="#d946ef" stroke-width="2"/>
+            <polyline points="0,45 20,35 40,20 60,30 80,15 100,25 120,5 120,50 0,50"
+              fill="rgba(217,70,239,0.1)"/>
+          </svg>
+        </div>
+      </div>
+      <div class="dash-panel">
+        <div class="dash-panel-title">Brand Identity Analysis</div>
+        <svg viewBox="0 0 120 100" width="100%" height="100%">
+          <polygon points="60,10 100,35 100,65 60,90 20,65 20,35"
+            fill="none" stroke="rgba(139,92,246,0.4)" stroke-width="1"/>
+          <polygon points="60,25 85,40 85,60 60,75 35,60 35,40"
+            fill="none" stroke="rgba(139,92,246,0.3)" stroke-width="1"/>
+          <polygon points="60,38 75,47 75,57 60,65 45,57 45,47"
+            fill="rgba(139,92,246,0.1)" stroke="#8b5cf6" stroke-width="1.5"/>
+          <circle cx="60" cy="52" r="3" fill="#d946ef"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="features-grid">
+    <div class="feature-card reveal">
+      <div class="feature-icon">📊</div>
+      <div class="feature-content">
+        <h4>Análisis de Redes</h4>
+        <p>Métricas avanzadas de todas tus plataformas sociales en un solo lugar.</p>
+      </div>
+    </div>
+    <div class="feature-card reveal">
+      <div class="feature-icon">🌐</div>
+      <div class="feature-content">
+        <h4>Auditoría Web</h4>
+        <p>Evaluación completa de tu sitio: rendimiento, UX, SEO y coherencia visual.</p>
+      </div>
+    </div>
+    <div class="feature-card reveal">
+      <div class="feature-icon">📚</div>
+      <div class="feature-content">
+        <h4>Revisión de Brandbook</h4>
+        <p>Validación de la aplicación de tu manual de marca en todos los canales.</p>
+      </div>
+    </div>
+    <div class="feature-card reveal">
+      <div class="feature-icon">↗</div>
+      <div class="feature-content">
+        <h4>Insights Accionables</h4>
+        <p>Recomendaciones concretas basadas en datos para mejorar tu presencia.</p>
+      </div>
+    </div>
+    <div class="feature-card reveal">
+      <div class="feature-icon">🛡</div>
+      <div class="feature-content">
+        <h4>Consistencia de Marca</h4>
+        <p>Detectamos inconsistencias visuales entre todos tus puntos de contacto.</p>
+      </div>
+    </div>
+    <div class="feature-card reveal">
+      <div class="feature-icon">⚡</div>
+      <div class="feature-content">
+        <h4>Reportes Instantáneos</h4>
+        <p>Diagnósticos automatizados con IA para tomar decisiones más rápido.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section id="cta">
+  <h2 class="reveal">¿Buscamos juntos <em>lo invisible</em>?</h2>
+  <p class="reveal">El primer paso hacia una marca de clase mundial comienza con un diagnóstico honesto. Iniciá tu Test de ADN Visual hoy mismo.</p>
+  <div class="reveal" style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:32px;">
+    <a href="https://test.chromalab.com.ar/" target="_blank" class="btn-hero" style="font-size:1rem;padding:14px 30px;">
+      Test de ADN Visual &nbsp;→
+    </a>
+    <a href="https://chroma-app-one.vercel.app" target="_blank" class="btn-secondary" style="font-size:1rem;padding:14px 30px;">
+      Analizar mi sitio →
+    </a>
+  </div>
+  <div class="cta-sub reveal">
+    <span>Resultado instantáneo</span>
+    <span>100% gratuito</span>
+    <span>Sin compromiso</span>
+  </div>
+</section>
+
+<!-- ECOSISTEMA -->
+<section id="ecosistema" style="padding:100px 60px;background:var(--bg);">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:64px;">
+      <span class="label reveal">Ecosistema Chroma</span>
+      <h2 class="reveal" style="font-size:clamp(2rem,4vw,3.2rem);margin-bottom:16px;">Tres herramientas.<br>Un solo <em>sistema</em>.</h2>
+      <p class="reveal" style="max-width:560px;margin:0 auto;color:var(--text);">Cada herramienta de Chroma resuelve un paso del proceso de construir una identidad visual sólida. Podés usarlas por separado o en secuencia.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;">
+
+      <div class="card reveal" style="position:relative;overflow:hidden;">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--purple),var(--pink));"></div>
+        <div class="card-icon" style="font-size:1.4rem;">🧬</div>
+        <div class="card-num">Paso 01</div>
+        <h3>Test de ADN Visual</h3>
+        <p style="margin-bottom:24px;">36 preguntas que mapean las 6 dimensiones del ADN visual de tu marca y clasifican tu estética en uno de 4 arquetipos fundamentales.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:28px;">
+          <span style="padding:4px 10px;border-radius:20px;font-size:0.72rem;background:rgba(139,92,246,0.1);color:var(--purple-light);border:1px solid rgba(139,92,246,0.2);">36 preguntas</span>
+          <span style="padding:4px 10px;border-radius:20px;font-size:0.72rem;background:rgba(139,92,246,0.1);color:var(--purple-light);border:1px solid rgba(139,92,246,0.2);">4 arquetipos</span>
+          <span style="padding:4px 10px;border-radius:20px;font-size:0.72rem;background:rgba(139,92,246,0.1);color:var(--purple-light);border:1px solid rgba(139,92,246,0.2);">100% gratuito</span>
+        </div>
+        <a href="https://test.chromalab.com.ar/" target="_blank" class="btn-primary" style="display:inline-flex;padding:10px 20px;font-size:0.85rem;">Hacer el test →</a>
+      </div>
+
+      <div class="card reveal" style="position:relative;overflow:hidden;border-color:rgba(139,92,246,0.4);">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--purple),var(--purple-light));"></div>
+        <div style="position:absolute;top:16px;right:16px;padding:4px 10px;background:var(--purple);border-radius:20px;font-size:0.7rem;font-weight:500;color:white;letter-spacing:0.05em;">Popular</div>
+        <div class="card-icon" style="font-size:1.4rem;">🔬</div>
+        <div class="card-num">Paso 02</div>
+        <h3>Analizador de Identidad Visual</h3>
+        <p style="margin-bottom:24px;">Ingresá la URL de cualquier sitio web y recibí un diagnóstico profesional de su identidad visual en segundos, con score y recomendaciones accionables.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:28px;">
+          <span style="padding:4px 10px;border-radius:20px;font-size:0.72rem;background:rgba(139,92,246,0.1);color:var(--purple-light);border:1px solid rgba(139,92,246,0.2);">Score 0-100</span>
+          <span style="padding:4px 10px;border-radius:20px;font-size:0.72rem;background:rgba(139,92,246,0.1);color:var(--purple-light);border:1px solid rgba(139,92,246,0.2);">5 dimensiones</span>
+          <span style="padding:4px 10px;border-radius:20px;font-size:0.72rem;background:rgba(139,92,246,0.1);color:var(--purple-light);border:1px solid rgba(139,92,246,0.2);">PDF exportable</span>
+        </div>
+        <a href="https://chroma-app-one.vercel.app" target="_blank" class="btn-primary" style="display:inline-flex;padding:10px 20px;font-size:0.85rem;">Analizar mi sitio →</a>
+      </div>
+
+      <div class="card reveal" style="position:relative;overflow:hidden;">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--pink),var(--purple));"></div>
+        <div class="card-icon" style="font-size:1.4rem;">🎯</div>
+        <div class="card-num">Paso 03</div>
+        <h3>Auditoría con Especialista</h3>
+        <p style="margin-bottom:24px;">Una sesión estratégica de 30 minutos donde un especialista de Chroma analiza tu reporte y define un plan de acción concreto para tu identidad visual.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:28px;">
+          <span style="padding:4px 10px;border-radius:20px;font-size:0.72rem;background:rgba(139,92,246,0.1);color:var(--purple-light);border:1px solid rgba(139,92,246,0.2);">30 minutos</span>
+          <span style="padding:4px 10px;border-radius:20px;font-size:0.72rem;background:rgba(139,92,246,0.1);color:var(--purple-light);border:1px solid rgba(139,92,246,0.2);">Google Meet</span>
+          <span style="padding:4px 10px;border-radius:20px;font-size:0.72rem;background:rgba(139,92,246,0.1);color:var(--purple-light);border:1px solid rgba(139,92,246,0.2);">Sin costo</span>
+        </div>
+        <a href="https://calendly.com/labid-chroma/30min" target="_blank" class="btn-secondary" style="display:inline-flex;padding:10px 20px;font-size:0.85rem;">Agendar sesión →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto">
+  <span class="label reveal">Contacto</span>
+  <h2 class="reveal">Hablemos de tu <em>marca</em></h2>
+  <p class="reveal">Contanos sobre tu proyecto y te respondemos en menos de 24 horas.</p>
+
+  <div class="contact-form reveal">
+    <!-- iframe oculto: recibe la respuesta sin recargar la página -->
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="iframeLoaded()"></iframe>
+
+    <div id="contactFormWrap">
+      <div class="form-group">
+        <label>👤 Nombre completo</label>
+        <input type="text" id="f-nombre" placeholder="Ej: Juan García">
+      </div>
+      <div class="form-group">
+        <label>✉ Correo electrónico</label>
+        <input type="email" id="f-email" placeholder="tu@empresa.com">
+      </div>
+      <div class="form-group">
+        <label>💬 Mensaje</label>
+        <textarea id="f-mensaje" placeholder="Contanos sobre tu proyecto, marca o consulta..."></textarea>
+      </div>
+      <div id="formError" style="display:none;color:#f87171;font-size:0.85rem;margin-bottom:12px;text-align:left;padding:10px 14px;background:rgba(248,113,113,0.08);border-radius:8px;border:1px solid rgba(248,113,113,0.2);">
+        Por favor completá todos los campos.
+      </div>
+      <button class="btn-submit" id="btnEnviar" onclick="enviarFormulario()">
+        ✉ &nbsp; Enviar mensaje
+      </button>
+    </div>
+    <div class="form-success" id="formSuccess">
+      ✓ &nbsp; ¡Mensaje enviado! Te respondemos en menos de 24 horas.
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a href="#" class="logo">
+    <div class="logo-icon"><img src="logo.jpg" alt="ChromaLab logo"></div>
+    <span class="logo-text">CHROMA<span>LAB</span></span>
+  </a>
+  <ul class="footer-links">
+    <li><a href="https://www.chromalab.com.ar">Home</a></li>
+    <li><a href="https://test.chromalab.com.ar/" target="_blank">Test ADN Visual</a></li>
+    <li><a href="https://chroma-app-one.vercel.app" target="_blank">App Analizador</a></li>
+    <li><a href="https://calendly.com/labid-chroma/30min" target="_blank">Agendar sesión</a></li>
+  </ul>
+  <p class="footer-copy">© 2026 ChromaLab · Todos los derechos reservados</p>
+</footer>
+
+<script>
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+reveals.forEach(el => observer.observe(el));
+
+// ─── GOOGLE SHEETS — IFRAME METHOD (funciona en mobile y desktop) ─
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzlVWtoTW1ksGODxz6i2I2-unhgOi_IAZeriPcWlMGj_GLZPjSg0BZA0OUxR8DusO3B9A/exec";
+
+let formSubmitted = false;
+
+function iframeLoaded() {
+  if (!formSubmitted) return;
+  document.getElementById('contactFormWrap').style.display = 'none';
+  document.getElementById('formSuccess').style.display    = 'block';
+  formSubmitted = false;
+}
+
+function enviarFormulario() {
+  const nombre  = document.getElementById('f-nombre').value.trim();
+  const email   = document.getElementById('f-email').value.trim();
+  const mensaje = document.getElementById('f-mensaje').value.trim();
+  const error   = document.getElementById('formError');
+  const btn     = document.getElementById('btnEnviar');
+
+  if (!nombre || !email || !mensaje) {
+    error.style.display = 'block';
+    return;
+  }
+  error.style.display = 'none';
+  btn.disabled    = true;
+  btn.textContent = 'Enviando...';
+
+  // Form dinámico → iframe oculto. Evita CORS en todos los browsers y mobile.
+  const form = document.createElement('form');
+  form.method = 'POST';
+  form.action = APPS_SCRIPT_URL;
+  form.target = 'hidden_iframe';
+
+  [{ nombre }, { email }, { mensaje }].forEach(obj => {
+    const [key, val] = Object.entries(obj)[0];
+    const input = document.createElement('input');
+    input.type  = 'hidden';
+    input.name  = key;
+    input.value = val;
+    form.appendChild(input);
+  });
+
+  document.body.appendChild(form);
+  formSubmitted = true;
+  form.submit();
+  document.body.removeChild(form);
+}
+</script>
+</body>
+</html>

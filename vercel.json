@@ -8,5 +8,11 @@
       "source": "/app/:path*",
       "destination": "https://chroma-app-one.vercel.app/:path*"
     }
+  ],
+  "routes": [
+    {
+      "src": "/generador",
+      "dest": "/generador.html"
+    }
   ]
 }

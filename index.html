@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ChromaLab · Laboratorio de Identidad Visual</title>
+<title>ChromaLab · Gestión de Redes Sociales con Identidad</title>
   <!-- SEO Meta Tags -->
-  <meta name="description" content="ChromaLab es un laboratorio de identidad visual. Analizamos tu marca, diagnosticamos tu ADN visual y transformamos tu identidad en una ventaja competitiva con herramientas estratégicas.">
-  <meta name="keywords" content="identidad visual, branding, diseño de marca, ADN visual, auditoría visual, branding corporativo, diseño editorial, social branding">
+  <meta name="description" content="ChromaLab gestiona tus redes sociales con estrategia, diseño e identidad de marca. Calendario editorial, contenido visual, community management y reportes mensuales.">
+  <meta name="keywords" content="gestión de redes sociales, community manager, social media, contenido para redes, calendario editorial, estrategia de contenido, diseño para redes, identidad visual, branding">
   <meta name="author" content="ChromaLab">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://www.chromalab.com.ar/">
@@ -14,16 +14,16 @@
   <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.chromalab.com.ar/">
-  <meta property="og:title" content="ChromaLab · Laboratorio de Identidad Visual">
-  <meta property="og:description" content="Diagnosticamos y transformamos tu identidad visual. Test de ADN Visual, Analizador de Sitios y Auditorías con especialistas.">
+  <meta property="og:title" content="ChromaLab · Gestión de Redes Sociales con Identidad">
+  <meta property="og:description" content="Gestionamos tu presencia en redes sociales con estrategia, diseño e identidad. Contenido que no llena el feed: construye tu marca.">
   <meta property="og:image" content="https://www.chromalab.com.ar/logo.jpg">
   <meta property="og:locale" content="es_AR">
   <meta property="og:site_name" content="ChromaLab">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="ChromaLab · Laboratorio de Identidad Visual">
-  <meta name="twitter:description" content="Diagnosticamos y transformamos tu identidad visual. Test de ADN Visual, Analizador de Sitios y Auditorías con especialistas.">
+  <meta name="twitter:title" content="ChromaLab · Gestión de Redes Sociales con Identidad">
+  <meta name="twitter:description" content="Gestionamos tu presencia en redes sociales con estrategia, diseño e identidad. Contenido que no llena el feed: construye tu marca.">
   <meta name="twitter:image" content="https://www.chromalab.com.ar/logo.jpg">
 
   <!-- Schema.org (Legibilidad para IA y buscadores) -->
@@ -32,7 +32,7 @@
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "ChromaLab",
-    "description": "Laboratorio de identidad visual. Analizamos marcas, diagnosticamos ADN visual y transformamos identidades en ventajas competitivas.",
+    "description": "Agencia de gestión de redes sociales con base en identidad visual. Estrategia de contenido, calendario editorial, diseño de piezas, community management y reportes mensuales.",
     "url": "https://www.chromalab.com.ar",
     "logo": "https://www.chromalab.com.ar/logo.jpg",
     "image": "https://www.chromalab.com.ar/logo.jpg",
@@ -42,6 +42,18 @@
     },
     "sameAs": [],
     "offers": [
+      {
+        "@type": "Offer",
+        "name": "Gestión de Redes Sociales",
+        "description": "Gestión mensual integral: estrategia, calendario editorial, diseño de contenido, community management y reportes.",
+        "url": "https://calendly.com/labid-chroma/30min"
+      },
+      {
+        "@type": "Offer",
+        "name": "Generador de Estrategia Social",
+        "description": "Calendario editorial personalizado con pilares de contenido, tono de comunicación y diseño de piezas.",
+        "url": "https://www.chromalab.com.ar/generador"
+      },
       {
         "@type": "Offer",
         "name": "Test de ADN Visual",
@@ -620,7 +632,7 @@
   /* ─── REDES SOCIALES ─── */
   #redes {
     padding: 100px 60px;
-    background: var(--bg);
+    background: var(--bg2);
     text-align: center;
   }
   #redes h2 {
@@ -740,6 +752,52 @@
     color: var(--muted);
     font-style: italic;
   }
+
+  /* ─── PLANES ─── */
+  #planes {
+    padding: 100px 60px;
+    background: var(--bg);
+    text-align: center;
+  }
+  #planes h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 16px;
+  }
+  #planes > p {
+    max-width: 580px;
+    margin: 0 auto 64px;
+    color: var(--text);
+  }
+  .planes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto 40px;
+    text-align: left;
+  }
+  .plan-card {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .plan-list {
+    list-style: none;
+    margin-bottom: 28px;
+    flex: 1;
+  }
+  .plan-list li {
+    font-size: 0.85rem;
+    color: var(--text);
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(139,92,246,0.08);
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .plan-list li:last-child { border-bottom: none; }
+  .plan-list li span { color: var(--purple-light); flex-shrink: 0; }
 
   /* ─── ANÁLISIS ─── */
   #analisis {
@@ -1066,7 +1124,8 @@
     .adn-inner { grid-template-columns: 1fr; gap: 40px; }
     .adn-visual { display: none; }
     section { padding-left: 24px; padding-right: 24px; }
-    #metodologia, #servicios, #redes, #analisis, #cta, #contacto { padding-left: 24px; padding-right: 24px; }
+    #metodologia, #servicios, #redes, #planes, #analisis, #cta, #contacto { padding-left: 24px; padding-right: 24px; }
+    .planes-grid { grid-template-columns: 1fr; }
     footer { flex-direction: column; gap: 24px; padding: 32px 24px; text-align: center; }
     .dashboard-wrap { height: 200px; }
   }
@@ -1081,46 +1140,45 @@
     <span class="logo-text">CHROMA<span>LAB</span></span>
   </a>
   <ul class="nav-links">
+    <li><a href="#redes">Servicios</a></li>
+    <li><a href="#planes">Planes</a></li>
     <li><a href="#metodologia">Metodología</a></li>
     <li><a href="#adn">ADN Visual</a></li>
-    <li><a href="#servicios">Servicios</a></li>
-    <li><a href="#analisis">Análisis</a></li>
-    <li><a href="#redes">Redes</a></li>
     <li><a href="#ecosistema">Herramientas</a></li>
   </ul>
-  <a href="https://chroma-app-one.vercel.app" target="_blank" class="btn-primary">Analizar sitio →</a>
+  <a href="https://calendly.com/labid-chroma/30min" target="_blank" class="btn-primary">Hablemos →</a>
 </nav>
 
 <!-- HERO -->
 <section id="hero">
   <div class="hero-content">
     <div class="hero-eyebrow">
-      <span>Laboratorio de Identidad</span>
+      <span>Gestión de Redes Sociales</span>
     </div>
     <h1 class="hero-title fade-up delay-1">
-      Profundidad que<br><em>transforma</em>
+      Tu marca, hablando<br><em>todos los días</em>
     </h1>
     <p class="hero-desc fade-up delay-2">
-      CHROMA redefine la identidad corporativa a través de una metodología científica de análisis visual. Descubrí el código genético de tu marca.
+      CHROMA gestiona tu presencia en redes sociales con estrategia, diseño e identidad. Contenido que no llena el feed: construye tu marca.
     </p>
     <div class="hero-ctas fade-up delay-3">
-      <a href="https://test.chromalab.com.ar/" target="_blank" class="btn-hero">
-        ✦ Iniciar ADN Visual &nbsp;→
+      <a href="https://calendly.com/labid-chroma/30min" target="_blank" class="btn-hero">
+        ✦ Hablemos de tus redes &nbsp;→
       </a>
-      <a href="#metodologia" class="btn-secondary">Conocer más</a>
+      <a href="#redes" class="btn-secondary">Ver servicios</a>
     </div>
     <div class="stats fade-up delay-4">
       <div>
-        <div class="stat-num">36</div>
-        <div class="stat-label">Preguntas</div>
+        <div class="stat-num">5</div>
+        <div class="stat-label">Plataformas</div>
       </div>
       <div>
-        <div class="stat-num">6</div>
-        <div class="stat-label">Dimensiones</div>
+        <div class="stat-num">30</div>
+        <div class="stat-label">Días de contenido</div>
       </div>
       <div>
-        <div class="stat-num">4</div>
-        <div class="stat-label">Arquetipos</div>
+        <div class="stat-num">100%</div>
+        <div class="stat-label">Identidad propia</div>
       </div>
     </div>
   </div>
@@ -1176,8 +1234,8 @@
         </svg>
       </div>
       <div class="hero-badge">
-        <div class="hero-badge-label">Diagnóstico</div>
-        <div class="hero-badge-value">Instantáneo</div>
+        <div class="hero-badge-label">Gestión</div>
+        <div class="hero-badge-value">Integral</div>
       </div>
     </div>
   </div>
@@ -1186,168 +1244,10 @@
   <div class="orb" style="width:400px;height:400px;background:radial-gradient(circle,rgba(139,92,246,0.08),transparent);top:-100px;right:10%;"></div>
 </section>
 
-<!-- METODOLOGÍA -->
-<section id="metodologia">
-  <span class="label reveal">Nuestra Metodología</span>
-  <h2 class="reveal">Análisis profundo para marcas<br>con <em>propósito comercial</em></h2>
-  <p class="reveal">Tres fases diseñadas para revelar el potencial oculto de tu marca y transformar tu identidad visual en una ventaja competitiva.</p>
-
-  <div class="cards-grid">
-    <div class="card reveal">
-      <div class="card-icon">⬛</div>
-      <div class="card-num">01</div>
-      <h3>Estratificación Visual</h3>
-      <p>Desglosamos cada elemento de tu comunicación para entender las capas de significado subyacentes.</p>
-    </div>
-    <div class="card reveal">
-      <div class="card-icon">🔍</div>
-      <div class="card-num">02</div>
-      <h3>Diagnóstico de ADN</h3>
-      <p>Identificamos patrones recurrentes y anomalías visuales que definen tu posición actual en el mercado.</p>
-    </div>
-    <div class="card reveal">
-      <div class="card-icon">✦</div>
-      <div class="card-num">03</div>
-      <h3>Síntesis Creativa</h3>
-      <p>Reconstruimos tu identidad proyectando un futuro de coherencia, elegancia y alto impacto visual.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ADN VISUAL -->
-<section id="adn" style="padding:100px 60px;background:var(--bg2);">
-  <div class="adn-inner">
-    <div class="adn-visual reveal">
-      <svg class="globe-svg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <radialGradient id="globeGrad" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stop-color="#4c1d95" stop-opacity="0.6"/>
-            <stop offset="100%" stop-color="#09090f" stop-opacity="0"/>
-          </radialGradient>
-          <filter id="glow2">
-            <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
-            <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
-          </filter>
-        </defs>
-        <circle cx="200" cy="200" r="120" fill="url(#globeGrad)" stroke="rgba(139,92,246,0.3)" stroke-width="1"/>
-        <g filter="url(#glow2)" class="ring1" style="transform-box:fill-box;">
-          <ellipse cx="200" cy="200" rx="140" ry="50" fill="none" stroke="#8b5cf6" stroke-width="1.5" opacity="0.7"/>
-        </g>
-        <g filter="url(#glow2)" class="ring2" style="transform-box:fill-box;">
-          <ellipse cx="200" cy="200" rx="110" ry="140" fill="none" stroke="#d946ef" stroke-width="1.5" opacity="0.5"/>
-        </g>
-        <g filter="url(#glow2)" class="ring3" style="transform-box:fill-box;">
-          <ellipse cx="200" cy="200" rx="90" ry="90" fill="none" stroke="#a78bfa" stroke-width="1" opacity="0.4"/>
-        </g>
-        <!-- Nodes on globe -->
-        <circle cx="200" cy="80" r="6" fill="#8b5cf6" filter="url(#glow2)"/>
-        <circle cx="310" cy="160" r="5" fill="#f59e0b" filter="url(#glow2)"/>
-        <circle cx="280" cy="290" r="5" fill="#ef4444" filter="url(#glow2)"/>
-        <circle cx="120" cy="280" r="5" fill="#22c55e" filter="url(#glow2)"/>
-        <circle cx="90" cy="160" r="5" fill="#3b82f6" filter="url(#glow2)"/>
-        <!-- Lines connecting nodes -->
-        <line x1="200" y1="80" x2="310" y2="160" stroke="rgba(139,92,246,0.4)" stroke-width="1"/>
-        <line x1="310" y1="160" x2="280" y2="290" stroke="rgba(217,70,239,0.4)" stroke-width="1"/>
-        <line x1="280" y1="290" x2="120" y2="280" stroke="rgba(139,92,246,0.4)" stroke-width="1"/>
-        <line x1="120" y1="280" x2="90" y2="160" stroke="rgba(217,70,239,0.4)" stroke-width="1"/>
-        <line x1="90" y1="160" x2="200" y2="80" stroke="rgba(139,92,246,0.4)" stroke-width="1"/>
-        <!-- Floating squares (logos) -->
-        <rect x="160" y="170" width="30" height="30" rx="5" fill="#1a1a2e" stroke="rgba(139,92,246,0.5)" stroke-width="1"/>
-        <rect x="205" y="190" width="28" height="28" rx="5" fill="#1a1a2e" stroke="rgba(217,70,239,0.5)" stroke-width="1"/>
-        <rect x="148" y="210" width="24" height="24" rx="4" fill="#1a1a2e" stroke="rgba(139,92,246,0.4)" stroke-width="1"/>
-        <rect x="225" y="155" width="26" height="26" rx="4" fill="#1a1a2e" stroke="rgba(217,70,239,0.4)" stroke-width="1"/>
-      </svg>
-      <div class="exclusivo-badge">Exclusivo CHROMA</div>
-    </div>
-
-    <div class="content reveal">
-      <span class="label">Exclusivo de Chroma</span>
-      <h2>El Test de <em>ADN Visual</em></h2>
-      <p class="desc">Tu identidad codificada. Hemos desarrollado una herramienta interactiva que clasifica tu estética en 4 arquetipos fundamentales.</p>
-      <p class="desc">36 preguntas para mapear las 6 dimensiones del ADN visual de tu marca y obtener un diagnóstico estratégico personalizado.</p>
-
-      <div class="arquetipos-grid">
-        <div class="arquetipo-card">
-          <div class="arquetipo-icon aq-yellow">⚡</div>
-          <div>
-            <div class="arquetipo-name">Dinámico</div>
-            <div class="arquetipo-desc">Energía pura y movimiento constante</div>
-          </div>
-        </div>
-        <div class="arquetipo-card">
-          <div class="arquetipo-icon aq-red">🔥</div>
-          <div>
-            <div class="arquetipo-name">Disruptivo</div>
-            <div class="arquetipo-desc">Ruptura radical de lo establecido</div>
-          </div>
-        </div>
-        <div class="arquetipo-card">
-          <div class="arquetipo-icon aq-green">🌿</div>
-          <div>
-            <div class="arquetipo-name">Orgánico</div>
-            <div class="arquetipo-desc">Formas naturales y equilibrio fluido</div>
-          </div>
-        </div>
-        <div class="arquetipo-card">
-          <div class="arquetipo-icon aq-blue">🏛</div>
-          <div>
-            <div class="arquetipo-name">Institucional</div>
-            <div class="arquetipo-desc">Solidez, confianza y estructura lineal</div>
-          </div>
-        </div>
-      </div>
-
-      <a href="https://test.chromalab.com.ar/" target="_blank" class="btn-hero" style="box-shadow:0 0 30px rgba(139,92,246,0.3);">
-        Averiguarlo AHORA &nbsp;→
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- SERVICIOS -->
-<section id="servicios">
-  <span class="label reveal">Nuestros Servicios</span>
-  <h2 class="reveal">Todo lo que tu marca <em>necesita</em></h2>
-  <p class="reveal">Soluciones integrales de diseño y comunicación visual para construir marcas memorables y con impacto comercial.</p>
-
-  <div class="services-grid">
-    <div class="card reveal">
-      <div class="card-icon">🎨</div>
-      <h3>Comunicación Visual</h3>
-      <p>Diseño gráfico estratégico que traduce tu mensaje en piezas visuales de alto impacto para todos tus canales.</p>
-    </div>
-    <div class="card reveal">
-      <div class="card-icon">👆</div>
-      <h3>Identidad de Marca</h3>
-      <p>Creación y evolución de sistemas visuales únicos que reflejan la esencia y diferencial de tu empresa.</p>
-    </div>
-    <div class="card reveal">
-      <div class="card-icon">🏢</div>
-      <h3>Branding Corporativo</h3>
-      <p>Desarrollo integral de marca: desde la estrategia hasta cada punto de contacto con tu audiencia.</p>
-    </div>
-    <div class="card reveal">
-      <div class="card-icon">👁</div>
-      <h3>Auditoría Visual</h3>
-      <p>Análisis exhaustivo de tu presencia visual actual para detectar oportunidades de mejora y coherencia.</p>
-    </div>
-    <div class="card reveal">
-      <div class="card-icon">📖</div>
-      <h3>Diseño Editorial</h3>
-      <p>Brandbooks, catálogos y material corporativo diseñado con precisión y atención al detalle.</p>
-    </div>
-    <div class="card reveal">
-      <div class="card-icon">📣</div>
-      <h3>Social Branding</h3>
-      <p>Estrategia visual para redes sociales que mantiene la coherencia de marca en cada publicación.</p>
-    </div>
-  </div>
-</section>
-
 <!-- REDES SOCIALES -->
 <section id="redes">
-  <span class="label reveal">Presencia Digital</span>
-  <h2 class="reveal">Tu identidad vive<br><em>también en las redes</em></h2>
+  <span class="label reveal">Nuestros Servicios</span>
+  <h2 class="reveal">Gestión de redes que<br><em>construye marca</em></h2>
   <p class="reveal">La identidad de una marca no termina en el logo. Se construye día a día en cada publicación, cada historia, cada interacción. Gestionamos tu presencia digital con la misma profundidad con la que concebimos tu identidad.</p>
 
   <div class="redes-grid">
@@ -1420,13 +1320,224 @@
     <span class="redes-tag">Facebook</span>
     <span class="redes-tag">LinkedIn</span>
     <span class="redes-tag">TikTok</span>
+    <span class="redes-tag">X (Twitter)</span>
   </div>
 
   <div class="redes-cta reveal">
     <p class="redes-cta-quote">"Profundidad que transforma, también en pantalla."</p>
-    <a href="https://calendly.com/labid-chroma/30min" target="_blank" class="btn-hero" style="box-shadow:0 0 30px rgba(139,92,246,0.3);">
-      Hablemos de tu presencia digital &nbsp;→
+    <a href="#planes" class="btn-hero" style="box-shadow:0 0 30px rgba(139,92,246,0.3);">
+      Ver planes de gestión &nbsp;→
     </a>
+  </div>
+</section>
+
+<!-- PLANES -->
+<section id="planes">
+  <span class="label reveal">Planes de Gestión</span>
+  <h2 class="reveal">Un plan para cada <em>etapa</em></h2>
+  <p class="reveal">Gestión mensual de redes sociales con estrategia, diseño y reportes incluidos. Nada de plantillas genéricas: todo nace de tu identidad.</p>
+
+  <div class="planes-grid">
+    <div class="card reveal plan-card">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--purple),var(--pink));"></div>
+      <div class="card-num">Plan 01</div>
+      <h3>Presencia</h3>
+      <p style="margin-bottom:20px;">Para marcas que necesitan constancia y coherencia en su canal principal.</p>
+      <ul class="plan-list">
+        <li><span>✦</span> 12 publicaciones mensuales</li>
+        <li><span>✦</span> 1 plataforma principal + 1 secundaria</li>
+        <li><span>✦</span> Diseño de piezas desde tu identidad</li>
+        <li><span>✦</span> Calendario editorial mensual</li>
+        <li><span>✦</span> Reporte mensual de resultados</li>
+      </ul>
+      <a href="https://calendly.com/labid-chroma/30min" target="_blank" class="btn-secondary" style="justify-content:center;">Consultar →</a>
+    </div>
+
+    <div class="card reveal plan-card" style="border-color:rgba(139,92,246,0.45);">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--purple),var(--purple-light));"></div>
+      <div style="position:absolute;top:16px;right:16px;padding:4px 10px;background:var(--purple);border-radius:20px;font-size:0.7rem;font-weight:500;color:white;letter-spacing:0.05em;">Popular</div>
+      <div class="card-num">Plan 02</div>
+      <h3>Crecimiento</h3>
+      <p style="margin-bottom:20px;">Para marcas que quieren crecer con contenido activo en varias plataformas.</p>
+      <ul class="plan-list">
+        <li><span>✦</span> 20 publicaciones mensuales + historias</li>
+        <li><span>✦</span> Hasta 3 plataformas</li>
+        <li><span>✦</span> Reels y carruseles incluidos</li>
+        <li><span>✦</span> Community management: respuesta y monitoreo</li>
+        <li><span>✦</span> Reporte con métricas + reunión mensual</li>
+      </ul>
+      <a href="https://calendly.com/labid-chroma/30min" target="_blank" class="btn-primary" style="justify-content:center;padding:13px 28px;font-size:0.95rem;">Consultar →</a>
+    </div>
+
+    <div class="card reveal plan-card">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--pink),var(--purple));"></div>
+      <div class="card-num">Plan 03</div>
+      <h3>Integral</h3>
+      <p style="margin-bottom:20px;">Para marcas que delegan su presencia digital completa en un solo equipo.</p>
+      <ul class="plan-list">
+        <li><span>✦</span> Contenido diario + campañas especiales</li>
+        <li><span>✦</span> Hasta 5 plataformas</li>
+        <li><span>✦</span> Estrategia trimestral revisada</li>
+        <li><span>✦</span> Gestión completa de comunidad</li>
+        <li><span>✦</span> Reportes quincenales + sesiones de estrategia</li>
+      </ul>
+      <a href="https://calendly.com/labid-chroma/30min" target="_blank" class="btn-secondary" style="justify-content:center;">Consultar →</a>
+    </div>
+  </div>
+
+  <p class="reveal" style="font-size:0.85rem;color:var(--muted);margin:0 auto;">¿Necesitás algo distinto? Armamos <a href="https://calendly.com/labid-chroma/30min" target="_blank" style="color:var(--purple-light);">planes a medida</a> según tu marca y tus objetivos.</p>
+</section>
+
+<!-- METODOLOGÍA -->
+<section id="metodologia">
+  <span class="label reveal">Nuestra Metodología</span>
+  <h2 class="reveal">Por qué nuestro contenido<br>es <em>distinto</em></h2>
+  <p class="reveal">Antes de publicar, entendemos quién sos. Tres fases que transforman tu identidad en contenido con criterio comercial — nunca piezas genéricas.</p>
+
+  <div class="cards-grid">
+    <div class="card reveal">
+      <div class="card-icon">⬛</div>
+      <div class="card-num">01</div>
+      <h3>Estratificación Visual</h3>
+      <p>Desglosamos cada elemento de tu comunicación para entender las capas de significado subyacentes.</p>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">🔍</div>
+      <div class="card-num">02</div>
+      <h3>Diagnóstico de ADN</h3>
+      <p>Identificamos patrones recurrentes y anomalías visuales que definen tu posición actual en el mercado.</p>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">✦</div>
+      <div class="card-num">03</div>
+      <h3>Síntesis Creativa</h3>
+      <p>Proyectamos tu identidad en cada pieza que publicás: coherencia, elegancia y alto impacto visual, post tras post.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ADN VISUAL -->
+<section id="adn" style="padding:100px 60px;background:var(--bg2);">
+  <div class="adn-inner">
+    <div class="adn-visual reveal">
+      <svg class="globe-svg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="globeGrad" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#4c1d95" stop-opacity="0.6"/>
+            <stop offset="100%" stop-color="#09090f" stop-opacity="0"/>
+          </radialGradient>
+          <filter id="glow2">
+            <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+            <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <circle cx="200" cy="200" r="120" fill="url(#globeGrad)" stroke="rgba(139,92,246,0.3)" stroke-width="1"/>
+        <g filter="url(#glow2)" class="ring1" style="transform-box:fill-box;">
+          <ellipse cx="200" cy="200" rx="140" ry="50" fill="none" stroke="#8b5cf6" stroke-width="1.5" opacity="0.7"/>
+        </g>
+        <g filter="url(#glow2)" class="ring2" style="transform-box:fill-box;">
+          <ellipse cx="200" cy="200" rx="110" ry="140" fill="none" stroke="#d946ef" stroke-width="1.5" opacity="0.5"/>
+        </g>
+        <g filter="url(#glow2)" class="ring3" style="transform-box:fill-box;">
+          <ellipse cx="200" cy="200" rx="90" ry="90" fill="none" stroke="#a78bfa" stroke-width="1" opacity="0.4"/>
+        </g>
+        <!-- Nodes on globe -->
+        <circle cx="200" cy="80" r="6" fill="#8b5cf6" filter="url(#glow2)"/>
+        <circle cx="310" cy="160" r="5" fill="#f59e0b" filter="url(#glow2)"/>
+        <circle cx="280" cy="290" r="5" fill="#ef4444" filter="url(#glow2)"/>
+        <circle cx="120" cy="280" r="5" fill="#22c55e" filter="url(#glow2)"/>
+        <circle cx="90" cy="160" r="5" fill="#3b82f6" filter="url(#glow2)"/>
+        <!-- Lines connecting nodes -->
+        <line x1="200" y1="80" x2="310" y2="160" stroke="rgba(139,92,246,0.4)" stroke-width="1"/>
+        <line x1="310" y1="160" x2="280" y2="290" stroke="rgba(217,70,239,0.4)" stroke-width="1"/>
+        <line x1="280" y1="290" x2="120" y2="280" stroke="rgba(139,92,246,0.4)" stroke-width="1"/>
+        <line x1="120" y1="280" x2="90" y2="160" stroke="rgba(217,70,239,0.4)" stroke-width="1"/>
+        <line x1="90" y1="160" x2="200" y2="80" stroke="rgba(139,92,246,0.4)" stroke-width="1"/>
+        <!-- Floating squares (logos) -->
+        <rect x="160" y="170" width="30" height="30" rx="5" fill="#1a1a2e" stroke="rgba(139,92,246,0.5)" stroke-width="1"/>
+        <rect x="205" y="190" width="28" height="28" rx="5" fill="#1a1a2e" stroke="rgba(217,70,239,0.5)" stroke-width="1"/>
+        <rect x="148" y="210" width="24" height="24" rx="4" fill="#1a1a2e" stroke="rgba(139,92,246,0.4)" stroke-width="1"/>
+        <rect x="225" y="155" width="26" height="26" rx="4" fill="#1a1a2e" stroke="rgba(217,70,239,0.4)" stroke-width="1"/>
+      </svg>
+      <div class="exclusivo-badge">Exclusivo CHROMA</div>
+    </div>
+
+    <div class="content reveal">
+      <span class="label">Exclusivo de Chroma</span>
+      <h2>El Test de <em>ADN Visual</em></h2>
+      <p class="desc">Tu identidad codificada. Antes de crear contenido para tus redes, mapeamos tu estética con una herramienta interactiva que la clasifica en 4 arquetipos fundamentales.</p>
+      <p class="desc">36 preguntas, 6 dimensiones, un diagnóstico estratégico personalizado. Cada pieza que sale de Chroma nace del ADN visual de tu marca.</p>
+
+      <div class="arquetipos-grid">
+        <div class="arquetipo-card">
+          <div class="arquetipo-icon aq-yellow">⚡</div>
+          <div>
+            <div class="arquetipo-name">Dinámico</div>
+            <div class="arquetipo-desc">Energía pura y movimiento constante</div>
+          </div>
+        </div>
+        <div class="arquetipo-card">
+          <div class="arquetipo-icon aq-red">🔥</div>
+          <div>
+            <div class="arquetipo-name">Disruptivo</div>
+            <div class="arquetipo-desc">Ruptura radical de lo establecido</div>
+          </div>
+        </div>
+        <div class="arquetipo-card">
+          <div class="arquetipo-icon aq-green">🌿</div>
+          <div>
+            <div class="arquetipo-name">Orgánico</div>
+            <div class="arquetipo-desc">Formas naturales y equilibrio fluido</div>
+          </div>
+        </div>
+        <div class="arquetipo-card">
+          <div class="arquetipo-icon aq-blue">🏛</div>
+          <div>
+            <div class="arquetipo-name">Institucional</div>
+            <div class="arquetipo-desc">Solidez, confianza y estructura lineal</div>
+          </div>
+        </div>
+      </div>
+
+      <a href="https://test.chromalab.com.ar/" target="_blank" class="btn-hero" style="box-shadow:0 0 30px rgba(139,92,246,0.3);">
+        Averiguarlo AHORA &nbsp;→
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section id="servicios">
+  <span class="label reveal">Complementos</span>
+  <h2 class="reveal">También hacemos <em>branding</em></h2>
+  <p class="reveal">La gestión de redes se potencia con una identidad sólida. Estos servicios de diseño y comunicación visual acompañan y elevan tu presencia digital.</p>
+
+  <div class="services-grid">
+    <div class="card reveal">
+      <div class="card-icon">🎨</div>
+      <h3>Comunicación Visual</h3>
+      <p>Diseño gráfico estratégico que traduce tu mensaje en piezas visuales de alto impacto para todos tus canales.</p>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">👆</div>
+      <h3>Identidad de Marca</h3>
+      <p>Creación y evolución de sistemas visuales únicos que reflejan la esencia y diferencial de tu empresa.</p>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">🏢</div>
+      <h3>Branding Corporativo</h3>
+      <p>Desarrollo integral de marca: desde la estrategia hasta cada punto de contacto con tu audiencia.</p>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">👁</div>
+      <h3>Auditoría Visual</h3>
+      <p>Análisis exhaustivo de tu presencia visual actual para detectar oportunidades de mejora y coherencia.</p>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">📖</div>
+      <h3>Diseño Editorial</h3>
+      <p>Brandbooks, catálogos y material corporativo diseñado con precisión y atención al detalle.</p>
+    </div>
   </div>
 </section>
 
@@ -1434,7 +1545,7 @@
 <section id="analisis">
   <span class="label reveal">Plataforma de Análisis</span>
   <h2 class="reveal">Tu sitio web bajo el <em>microscopio</em></h2>
-  <p class="reveal">Nuestro analizador examina la identidad visual de cualquier sitio web — color, tipografía, composición, consistencia y jerarquía — y devuelve un diagnóstico profesional en segundos.</p>
+  <p class="reveal">Nuestro analizador examina tu presencia digital — redes, sitio web, color, tipografía y consistencia — y devuelve un diagnóstico profesional en segundos. El punto de partida de toda buena gestión.</p>
 
   <div class="dashboard-wrap reveal">
     <div class="dashboard-inner">
@@ -1531,19 +1642,19 @@
 
 <!-- CTA FINAL -->
 <section id="cta">
-  <h2 class="reveal">¿Buscamos juntos <em>lo invisible</em>?</h2>
-  <p class="reveal">El primer paso hacia una marca de clase mundial comienza con un diagnóstico honesto. Iniciá tu Test de ADN Visual hoy mismo.</p>
+  <h2 class="reveal">¿Listos para que tu marca hable <em>todos los días</em>?</h2>
+  <p class="reveal">El primer paso es una conversación. Agendá una sesión gratuita de 30 minutos y armamos juntos el plan para tus redes.</p>
   <div class="reveal" style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:32px;">
-    <a href="https://test.chromalab.com.ar/" target="_blank" class="btn-hero" style="font-size:1rem;padding:14px 30px;">
-      Test de ADN Visual &nbsp;→
+    <a href="https://calendly.com/labid-chroma/30min" target="_blank" class="btn-hero" style="font-size:1rem;padding:14px 30px;">
+      Agendar sesión gratuita &nbsp;→
     </a>
-    <a href="https://chroma-app-one.vercel.app" target="_blank" class="btn-secondary" style="font-size:1rem;padding:14px 30px;">
-      Analizar mi sitio →
+    <a href="https://www.chromalab.com.ar/generador" target="_blank" class="btn-secondary" style="font-size:1rem;padding:14px 30px;">
+      Generar estrategia gratis →
     </a>
   </div>
   <div class="cta-sub reveal">
-    <span>Resultado instantáneo</span>
-    <span>100% gratuito</span>
+    <span>30 minutos</span>
+    <span>Sin costo</span>
     <span>Sin compromiso</span>
   </div>
 </section>
@@ -1554,43 +1665,15 @@
     <div style="text-align:center;margin-bottom:64px;">
       <span class="label reveal">Ecosistema Chroma</span>
       <h2 class="reveal" style="font-size:clamp(2rem,4vw,3.2rem);margin-bottom:16px;">Cuatro herramientas.<br>Un solo <em>sistema</em>.</h2>
-      <p class="reveal" style="max-width:560px;margin:0 auto;color:var(--text);">Cada herramienta de Chroma resuelve un paso del proceso de construir una identidad visual sólida y una presencia digital coherente. Podés usarlas por separado o en secuencia.</p>
+      <p class="reveal" style="max-width:560px;margin:0 auto;color:var(--text);">Cada herramienta de Chroma resuelve un paso del proceso de construir una presencia digital sólida y coherente con tu identidad. Podés usarlas por separado o en secuencia.</p>
     </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;">
 
-      <div class="card reveal" style="position:relative;overflow:hidden;">
-        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--purple),var(--pink));"></div>
-        <div class="card-icon" style="font-size:1.4rem;">🧬</div>
-        <div class="card-num">Paso 01</div>
-        <h3>Test de ADN Visual</h3>
-        <p style="margin-bottom:24px;">36 preguntas que mapean las 6 dimensiones del ADN visual de tu marca y clasifican tu estética en uno de 4 arquetipos fundamentales.</p>
-        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:28px;">
-          <span style="padding:4px 10px;border-radius:20px;font-size:0.72rem;background:rgba(139,92,246,0.1);color:var(--purple-light);border:1px solid rgba(139,92,246,0.2);">36 preguntas</span>
-          <span style="padding:4px 10px;border-radius:20px;font-size:0.72rem;background:rgba(139,92,246,0.1);color:var(--purple-light);border:1px solid rgba(139,92,246,0.2);">4 arquetipos</span>
-          <span style="padding:4px 10px;border-radius:20px;font-size:0.72rem;background:rgba(139,92,246,0.1);color:var(--purple-light);border:1px solid rgba(139,92,246,0.2);">100% gratuito</span>
-        </div>
-        <a href="https://test.chromalab.com.ar/" target="_blank" class="btn-primary" style="display:inline-flex;padding:10px 20px;font-size:0.85rem;">Hacer el test →</a>
-      </div>
-
       <div class="card reveal" style="position:relative;overflow:hidden;border-color:rgba(139,92,246,0.4);">
-        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--purple),var(--purple-light));"></div>
-        <div style="position:absolute;top:16px;right:16px;padding:4px 10px;background:var(--purple);border-radius:20px;font-size:0.7rem;font-weight:500;color:white;letter-spacing:0.05em;">Popular</div>
-        <div class="card-icon" style="font-size:1.4rem;">🔬</div>
-        <div class="card-num">Paso 02</div>
-        <h3>Analizador de Identidad Visual</h3>
-        <p style="margin-bottom:24px;">Ingresá la URL de cualquier sitio web y recibí un diagnóstico profesional de su identidad visual en segundos, con score y recomendaciones accionables.</p>
-        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:28px;">
-          <span style="padding:4px 10px;border-radius:20px;font-size:0.72rem;background:rgba(139,92,246,0.1);color:var(--purple-light);border:1px solid rgba(139,92,246,0.2);">Score 0-100</span>
-          <span style="padding:4px 10px;border-radius:20px;font-size:0.72rem;background:rgba(139,92,246,0.1);color:var(--purple-light);border:1px solid rgba(139,92,246,0.2);">5 dimensiones</span>
-          <span style="padding:4px 10px;border-radius:20px;font-size:0.72rem;background:rgba(139,92,246,0.1);color:var(--purple-light);border:1px solid rgba(139,92,246,0.2);">PDF exportable</span>
-        </div>
-        <a href="https://chroma-app-one.vercel.app" target="_blank" class="btn-primary" style="display:inline-flex;padding:10px 20px;font-size:0.85rem;">Analizar mi sitio →</a>
-      </div>
-
-      <div class="card reveal" style="position:relative;overflow:hidden;">
         <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--pink),var(--purple));"></div>
+        <div style="position:absolute;top:16px;right:16px;padding:4px 10px;background:var(--purple);border-radius:20px;font-size:0.7rem;font-weight:500;color:white;letter-spacing:0.05em;">Popular</div>
         <div class="card-icon" style="font-size:1.4rem;">📡</div>
-        <div class="card-num">Paso 03</div>
+        <div class="card-num">Paso 01</div>
         <h3>Generador de Estrategia Social</h3>
         <p style="margin-bottom:24px;">Completá los datos de tu marca y obtené un calendario editorial personalizado con pilares de contenido, tono de comunicación y diseño de piezas incluido.</p>
         <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:28px;">
@@ -1603,10 +1686,38 @@
 
       <div class="card reveal" style="position:relative;overflow:hidden;">
         <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--purple),var(--pink));"></div>
+        <div class="card-icon" style="font-size:1.4rem;">🧬</div>
+        <div class="card-num">Paso 02</div>
+        <h3>Test de ADN Visual</h3>
+        <p style="margin-bottom:24px;">36 preguntas que mapean las 6 dimensiones del ADN visual de tu marca y clasifican tu estética en uno de 4 arquetipos fundamentales.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:28px;">
+          <span style="padding:4px 10px;border-radius:20px;font-size:0.72rem;background:rgba(139,92,246,0.1);color:var(--purple-light);border:1px solid rgba(139,92,246,0.2);">36 preguntas</span>
+          <span style="padding:4px 10px;border-radius:20px;font-size:0.72rem;background:rgba(139,92,246,0.1);color:var(--purple-light);border:1px solid rgba(139,92,246,0.2);">4 arquetipos</span>
+          <span style="padding:4px 10px;border-radius:20px;font-size:0.72rem;background:rgba(139,92,246,0.1);color:var(--purple-light);border:1px solid rgba(139,92,246,0.2);">100% gratuito</span>
+        </div>
+        <a href="https://test.chromalab.com.ar/" target="_blank" class="btn-primary" style="display:inline-flex;padding:10px 20px;font-size:0.85rem;">Hacer el test →</a>
+      </div>
+
+      <div class="card reveal" style="position:relative;overflow:hidden;">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--purple),var(--purple-light));"></div>
+        <div class="card-icon" style="font-size:1.4rem;">🔬</div>
+        <div class="card-num">Paso 03</div>
+        <h3>Analizador de Identidad Visual</h3>
+        <p style="margin-bottom:24px;">Ingresá la URL de cualquier sitio web y recibí un diagnóstico profesional de su identidad visual en segundos, con score y recomendaciones accionables.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:28px;">
+          <span style="padding:4px 10px;border-radius:20px;font-size:0.72rem;background:rgba(139,92,246,0.1);color:var(--purple-light);border:1px solid rgba(139,92,246,0.2);">Score 0-100</span>
+          <span style="padding:4px 10px;border-radius:20px;font-size:0.72rem;background:rgba(139,92,246,0.1);color:var(--purple-light);border:1px solid rgba(139,92,246,0.2);">5 dimensiones</span>
+          <span style="padding:4px 10px;border-radius:20px;font-size:0.72rem;background:rgba(139,92,246,0.1);color:var(--purple-light);border:1px solid rgba(139,92,246,0.2);">PDF exportable</span>
+        </div>
+        <a href="https://chroma-app-one.vercel.app" target="_blank" class="btn-primary" style="display:inline-flex;padding:10px 20px;font-size:0.85rem;">Analizar mi sitio →</a>
+      </div>
+
+      <div class="card reveal" style="position:relative;overflow:hidden;">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--purple),var(--pink));"></div>
         <div class="card-icon" style="font-size:1.4rem;">🎯</div>
         <div class="card-num">Paso 04</div>
         <h3>Auditoría con Especialista</h3>
-        <p style="margin-bottom:24px;">Una sesión estratégica de 30 minutos donde un especialista de Chroma analiza tu reporte y define un plan de acción concreto para tu identidad visual.</p>
+        <p style="margin-bottom:24px;">Una sesión estratégica de 30 minutos donde un especialista de Chroma analiza tu reporte y define un plan de acción concreto para tus redes y tu identidad visual.</p>
         <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:28px;">
           <span style="padding:4px 10px;border-radius:20px;font-size:0.72rem;background:rgba(139,92,246,0.1);color:var(--purple-light);border:1px solid rgba(139,92,246,0.2);">30 minutos</span>
           <span style="padding:4px 10px;border-radius:20px;font-size:0.72rem;background:rgba(139,92,246,0.1);color:var(--purple-light);border:1px solid rgba(139,92,246,0.2);">Google Meet</span>
@@ -1622,7 +1733,7 @@
 <!-- CONTACTO -->
 <section id="contacto">
   <span class="label reveal">Contacto</span>
-  <h2 class="reveal">Hablemos de tu <em>marca</em></h2>
+  <h2 class="reveal">Hablemos de tus <em>redes</em></h2>
   <p class="reveal">Contanos sobre tu proyecto y te respondemos en menos de 24 horas.</p>
 
   <div class="contact-form reveal">
@@ -1640,7 +1751,7 @@
       </div>
       <div class="form-group">
         <label>💬 Mensaje</label>
-        <textarea id="f-mensaje" placeholder="Contanos sobre tu proyecto, marca o consulta..."></textarea>
+        <textarea id="f-mensaje" placeholder="Contanos sobre tu marca, tus redes o tu consulta..."></textarea>
       </div>
       <div id="formError" style="display:none;color:#f87171;font-size:0.85rem;margin-bottom:12px;text-align:left;padding:10px 14px;background:rgba(248,113,113,0.08);border-radius:8px;border:1px solid rgba(248,113,113,0.2);">
         Por favor completá todos los campos.
@@ -1663,6 +1774,7 @@
   </a>
   <ul class="footer-links">
     <li><a href="https://www.chromalab.com.ar">Home</a></li>
+    <li><a href="https://www.chromalab.com.ar/generador" target="_blank">Generador de Estrategia</a></li>
     <li><a href="https://test.chromalab.com.ar/" target="_blank">Test ADN Visual</a></li>
     <li><a href="https://chroma-app-one.vercel.app" target="_blank">App Analizador</a></li>
     <li><a href="https://calendly.com/labid-chroma/30min" target="_blank">Agendar sesión</a></li>

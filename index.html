@@ -588,10 +588,11 @@
     font-size: 1rem;
     flex-shrink: 0;
   }
-  .aq-yellow { background: #f59e0b22; }
-  .aq-red { background: #ef444422; }
-  .aq-green { background: #22c55e22; }
-  .aq-blue { background: #3b82f622; }
+  .aq-yellow { background: rgba(139,92,246,0.13); }
+  .aq-red { background: rgba(217,70,239,0.13); }
+  .aq-green { background: rgba(139,92,246,0.13); }
+  .aq-blue { background: rgba(217,70,239,0.13); }
+  .aq-emoji { filter: grayscale(1) brightness(1.9) sepia(1) hue-rotate(212deg) saturate(2.2); }
 
   .arquetipo-name {
     font-size: 0.9rem;
@@ -1002,7 +1003,7 @@
   .form-group textarea {
     width: 100%;
     background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.16);
     border-radius: 10px;
     padding: 14px 16px;
     color: var(--white);
@@ -1012,7 +1013,7 @@
     transition: border-color 0.2s;
   }
   .form-group input::placeholder,
-  .form-group textarea::placeholder { color: var(--muted); }
+  .form-group textarea::placeholder { color: #9d9dbd; }
   .form-group input:focus,
   .form-group textarea:focus {
     border-color: rgba(139,92,246,0.5);
@@ -1367,7 +1368,7 @@
           <span style="padding:4px 10px;border-radius:20px;font-size:0.72rem;background:rgba(139,92,246,0.1);color:var(--purple-light);border:1px solid rgba(139,92,246,0.2);">4 arquetipos</span>
           <span style="padding:4px 10px;border-radius:20px;font-size:0.72rem;background:rgba(139,92,246,0.1);color:var(--purple-light);border:1px solid rgba(139,92,246,0.2);">100% gratuito</span>
         </div>
-        <a href="https://test.chromalab.com.ar/" target="_blank" class="btn-primary" style="display:inline-flex;padding:10px 20px;font-size:0.85rem;">Hacer el test →</a>
+        <a href="https://test.chromalab.com.ar/" target="_blank" class="btn-secondary" style="display:inline-flex;padding:10px 20px;font-size:0.85rem;">Hacer el test →</a>
       </div>
 
       <div class="card reveal" style="position:relative;overflow:hidden;">
@@ -1381,7 +1382,7 @@
           <span style="padding:4px 10px;border-radius:20px;font-size:0.72rem;background:rgba(139,92,246,0.1);color:var(--purple-light);border:1px solid rgba(139,92,246,0.2);">5 dimensiones</span>
           <span style="padding:4px 10px;border-radius:20px;font-size:0.72rem;background:rgba(139,92,246,0.1);color:var(--purple-light);border:1px solid rgba(139,92,246,0.2);">PDF exportable</span>
         </div>
-        <a href="https://analizador.chromalab.com.ar/" target="_blank" class="btn-primary" style="display:inline-flex;padding:10px 20px;font-size:0.85rem;">Analizar mi sitio →</a>
+        <a href="https://analizador.chromalab.com.ar/" target="_blank" class="btn-secondary" style="display:inline-flex;padding:10px 20px;font-size:0.85rem;">Analizar mi sitio →</a>
       </div>
 
       <div class="card reveal" style="position:relative;overflow:hidden;">
@@ -1540,28 +1541,28 @@
 
       <div class="arquetipos-grid">
         <div class="arquetipo-card">
-          <div class="arquetipo-icon aq-yellow">⚡</div>
+          <div class="arquetipo-icon aq-yellow"><span class="aq-emoji">⚡</span></div>
           <div>
             <div class="arquetipo-name">Dinámico</div>
             <div class="arquetipo-desc">Energía pura y movimiento constante</div>
           </div>
         </div>
         <div class="arquetipo-card">
-          <div class="arquetipo-icon aq-red">🔥</div>
+          <div class="arquetipo-icon aq-red"><span class="aq-emoji">🔥</span></div>
           <div>
             <div class="arquetipo-name">Disruptivo</div>
             <div class="arquetipo-desc">Ruptura radical de lo establecido</div>
           </div>
         </div>
         <div class="arquetipo-card">
-          <div class="arquetipo-icon aq-green">🌿</div>
+          <div class="arquetipo-icon aq-green"><span class="aq-emoji">🌿</span></div>
           <div>
             <div class="arquetipo-name">Orgánico</div>
             <div class="arquetipo-desc">Formas naturales y equilibrio fluido</div>
           </div>
         </div>
         <div class="arquetipo-card">
-          <div class="arquetipo-icon aq-blue">🏛</div>
+          <div class="arquetipo-icon aq-blue"><span class="aq-emoji">🏛</span></div>
           <div>
             <div class="arquetipo-name">Institucional</div>
             <div class="arquetipo-desc">Solidez, confianza y estructura lineal</div>

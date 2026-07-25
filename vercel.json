@@ -15,4 +15,11 @@
       "dest": "/generador.html"
     }
   ]
+  "redirects": [
+    {
+      "source": "/generador",
+      "destination": "/estrategia",
+      "permanent": true
+    }
+  ]
 }

@@ -9,12 +9,6 @@
       "destination": "https://chroma-app-one.vercel.app/:path*"
     }
   ],
-  "routes": [
-    {
-      "src": "/generador",
-      "dest": "/generador.html"
-    }
-  ]
   "redirects": [
     {
       "source": "/generador",

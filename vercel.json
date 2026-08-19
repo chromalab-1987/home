@@ -8,6 +8,10 @@
     {
       "source": "/app/:path*",
       "destination": "https://chroma-app-one.vercel.app/:path*"
+    },
+    {
+      "source": "/guia-de-estilo",
+      "destination": "/guia-de-estilo.html"
     }
   ],
   "redirects": [

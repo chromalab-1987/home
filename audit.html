@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Generador de auditorías · ChromaLab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#09090f;--card:#111120;--line:rgba(139,92,246,.25);--p:#8b5cf6;--pl:#a78bfa;--pink:#d946ef;--w:#f0eeff;--t:#c4c4d8;--m:#9d9dbd}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#1b1b26;font-family:'DM Sans',sans-serif;font-weight:300;color:var(--t);line-height:1.55;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+h1,h2,h3,.serif{font-family:'Playfair Display',serif;color:var(--w);line-height:1.1}
+/* PANEL */
+#panel{max-width:794px;margin:0 auto;padding:28px 20px}
+#panel h1{font-size:1.6rem;margin-bottom:6px}
+#panel p.s{font-size:.9rem;margin-bottom:18px;color:var(--m)}
+.row{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:10px}
+#panel input,#panel textarea{width:100%;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.18);border-radius:10px;padding:11px 13px;color:var(--w);font:inherit;font-size:.95rem}
+#panel textarea{min-height:150px;resize:vertical;margin-bottom:12px}
+#panel input:focus,#panel textarea:focus{outline:2px solid var(--pl);outline-offset:1px}
+.btns{display:flex;gap:10px;flex-wrap:wrap}
+button{font:inherit;font-weight:500;border:0;border-radius:30px;padding:12px 24px;cursor:pointer;color:#fff;background:linear-gradient(135deg,var(--p),#6d28d9)}
+button.sec{background:rgba(255,255,255,.1)}
+#msg{font-size:.85rem;margin-top:12px;color:var(--pl)}
+.tip{font-size:.8rem;color:var(--m);margin-top:10px}
+/* PÁGINAS */
+.page{position:relative;width:210mm;min-height:297mm;margin:0 auto 18px;padding:24mm 16mm 24mm;background:var(--bg);overflow:hidden;break-after:page}
+.page.cover{background:radial-gradient(circle at 15% 8%,rgba(139,92,246,.28),transparent 45%),var(--bg)}
+.hd{position:absolute;top:12mm;left:16mm;right:16mm;display:flex;justify-content:space-between;font-size:8.5pt;color:var(--m)}
+.hd b{font-weight:500;color:var(--w);letter-spacing:.05em}.hd b span{color:var(--p)}
+.ft{position:absolute;bottom:10mm;left:16mm;right:16mm;border-top:1px solid #1f1f33;padding-top:3mm;font-size:8pt;color:var(--m)}
+h2.t{font-size:26pt;margin-bottom:6mm}
+.lead{font-size:11pt;margin-bottom:8mm}
+.lab{font-size:8.5pt;color:var(--pl);margin-bottom:2mm;font-weight:500}
+[contenteditable]:focus{outline:1px dashed var(--pl);outline-offset:3px}
+/* portada */
+.cover .brand{position:absolute;top:18mm;left:16mm;font-weight:500;letter-spacing:.05em;color:var(--w)}.cover .brand span{color:var(--p)}
+.cover .eb{display:flex;align-items:center;gap:8px;font-size:9pt;color:var(--m);margin:78mm 0 6mm}
+.cover .eb::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--p);box-shadow:0 0 12px var(--p)}
+.cover h1{font-size:50pt;margin-bottom:6mm}.cover h1 em{display:block;color:var(--pl);font-style:italic}
+.cover .d{max-width:120mm;font-size:12pt;margin-bottom:14mm}
+.meta{display:grid;gap:5mm;max-width:130mm}
+.meta div{border-left:2px solid var(--p);padding-left:4mm}.meta small{display:block;font-size:8pt;color:var(--m)}.meta span{font-size:12pt;color:var(--w)}
+/* diagnóstico */
+.resumen{font-family:'Playfair Display',serif;font-size:15pt;color:var(--w);line-height:1.35;border-left:3px solid var(--p);padding-left:5mm;margin-bottom:8mm}
+.gen{display:flex;align-items:baseline;gap:3mm;margin-bottom:6mm}.gen b{font-family:'Playfair Display',serif;font-size:34pt;color:var(--pl);font-weight:700}.gen span{font-size:10pt;color:var(--m)}
+.dim{display:grid;grid-template-columns:34mm 28mm 1fr;gap:5mm;padding:4mm 0;border-top:1px solid #1f1f33;align-items:start}
+.dim h3{font-family:'DM Sans',sans-serif;font-size:10.5pt;font-weight:500}
+.sc{font-family:'Playfair Display',serif;font-size:18pt;color:var(--w)}.sc small{font-size:9pt;color:var(--m);font-family:'DM Sans'}
+.bar{display:flex;gap:2px;margin-top:2px}.bar i{width:9mm;height:2mm;border-radius:2px;background:#26263a}.bar i.on{background:linear-gradient(90deg,var(--p),var(--pink))}
+.dim p{font-size:10pt}
+/* listas */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:8mm}
+.box{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:7mm}
+.box h3{font-size:15pt;margin-bottom:5mm}
+.box ul{list-style:none;display:grid;gap:4mm}.box li{position:relative;padding-left:5mm;font-size:10.5pt}
+.box li::before{content:'';position:absolute;left:0;top:.55em;width:6px;height:6px;border-radius:50%;background:var(--pl)}
+.box.mej li::before{background:var(--pink)}
+/* prioridades */
+.pr{display:grid;grid-template-columns:16mm 1fr;gap:4mm;margin-bottom:8mm}
+.pr .n{font-family:'Playfair Display',serif;font-size:42pt;font-weight:700;color:var(--p);line-height:1}
+.pr h3{font-size:16pt;margin-bottom:2mm}.pr p{font-size:10.5pt}
+/* propuesta */
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:4mm;margin-bottom:7mm}
+.plan{border:1px solid #26263a;border-radius:12px;padding:4mm;opacity:.5}
+.plan.on{opacity:1;border-color:var(--p);background:rgba(139,92,246,.12)}
+.plan b{display:block;color:var(--w);font-weight:500;font-size:10.5pt}.plan small{display:block;font-size:8.5pt;color:var(--m)}
+.plan em{display:none;font-style:normal;font-size:8pt;color:var(--pl);margin-top:2mm}.plan.on em{display:block}
+.wk{display:grid;grid-template-columns:20mm 1fr;gap:4mm;padding:3mm 0;border-top:1px solid #1f1f33;font-size:10.5pt}.wk b{color:var(--w);font-weight:500}
+.cta{margin-top:8mm;background:var(--p);border-radius:16px;padding:7mm;display:flex;justify-content:space-between;align-items:center;gap:6mm}
+.cta h3{font-size:19pt;color:#fff;margin-bottom:1mm}.cta p{color:#fff;font-size:10pt}
+.cta a{background:#fff;color:#6d28d9;text-decoration:none;font-weight:500;border-radius:30px;padding:3mm 6mm;font-size:10.5pt;white-space:nowrap}
+@media print{
+  @page{size:A4;margin:0}
+  body{background:var(--bg)}#panel{display:none}.page{margin:0}
+}
+@media screen and (max-width:820px){.page{width:100%;padding:60px 22px;min-height:0}.cols{grid-template-columns:1fr}.dim{grid-template-columns:1fr}.plans{grid-template-columns:1fr}.hd,.ft{left:22px;right:22px}.cover .brand{left:22px}.cta{flex-direction:column;align-items:flex-start}}
+</style>
+</head>
+<body>
+<div id="panel">
+  <h1>Generador de auditorías</h1>
+  <p class="s">Pegá la respuesta de Claude, completá los datos de la marca y descargá el PDF con formato.</p>
+  <div class="row">
+    <input id="marca" placeholder="Marca" aria-label="Marca">
+    <input id="ig" placeholder="@usuario de Instagram" aria-label="Instagram">
+    <input id="para" placeholder="Preparada para (nombre)" aria-label="Preparada para">
+    <input id="fecha" aria-label="Fecha">
+  </div>
+  <textarea id="src" placeholder="Pegá acá la respuesta completa de Claude (con las etiquetas [RESUMEN], [PERFIL Y BIO], etc.)" aria-label="Respuesta de Claude"></textarea>
+  <div class="btns"><button id="gen">Generar auditoría</button><button class="sec" id="pdf">Descargar PDF</button></div>
+  <p id="msg" role="status"></p>
+  <p class="tip">Para el PDF: en la ventana de impresión elegí «Guardar como PDF» y activá «Gráficos de fondo». Podés corregir cualquier texto haciendo clic sobre él antes de descargar.</p>
+</div>
+<div id="doc"></div>
+
+<script>
+const $=id=>document.getElementById(id);
+$('fecha').value=new Date().toLocaleDateString('es-AR',{day:'numeric',month:'long',year:'numeric'});
+const esc=s=>String(s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const norm=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toUpperCase().replace(/[*_]/g,'').trim();
+const E=t=>`contenteditable="true" spellcheck="false">${t}`;
+const DIMS=[['PERFIL Y BIO','Perfil y bio','Foto, bio, link y destacadas.'],['COHERENCIA VISUAL','Coherencia visual','Colores, tipografías y estilo.'],['CONTENIDO','Contenido','Variedad, valor y claridad.'],['CONSTANCIA','Constancia','Frecuencia y orden al publicar.'],['INTERACCION','Interacción','Comentarios y vínculo.'],['LLAMADO A LA ACCION','Llamado a la acción','Qué le pedís a la gente.']];
+const PLANS=[['Gestión de redes','Estrategia, diseño, copies, publicación y métricas.'],['Consultoría de marca','Diagnóstico de identidad, estrategia y hoja de ruta.'],['Advisory','Acompañamiento mensual como socio estratégico.']];
+const items=s=>(s||'').split('\n').map(l=>l.replace(/^[\s\-•*–]+/,'').trim()).filter(Boolean);
+const afterBar=s=>{const p=s.indexOf('|');return (p>-1?s.slice(p+1):s).replace(/^\s*(Observaci[oó]n|C[oó]mo lo resolvemos)\s*:?\s*/i,'').trim()};
+
+function parse(txt){
+  const parts=txt.replace(/\*\*/g,'').split(/\[([^\]\n]{2,40})\]/),map={};
+  for(let i=1;i<parts.length;i+=2)map[norm(parts[i])]=(parts[i+1]||'').trim();
+  return map;
+}
+function build(){
+  const m=parse($('src').value);
+  if(!Object.keys(m).length){$('msg').textContent='No encontré etiquetas como [RESUMEN]. Pegá la respuesta completa de Claude.';return false}
+  const dims=DIMS.map(([k,n,d])=>{const s=m[k]||'';const mm=s.match(/Puntaje:?\s*([0-5](?:[.,]\d)?|-)/i);const sc=mm?mm[1].replace(',','.'):'-';return{n,d,sc,obs:afterBar(s)}});
+  const nums=dims.map(x=>parseFloat(x.sc)).filter(x=>!isNaN(x));
+  let gen=(m['PUNTAJE GENERAL']||'').match(/\d(?:[.,]\d)?/);gen=gen?gen[0].replace(',','.'):(nums.length?(nums.reduce((a,b)=>a+b,0)/nums.length).toFixed(1):'-');
+  const bar=sc=>{const v=Math.round(parseFloat(sc))||0;return '<div class="bar">'+[1,2,3,4,5].map(i=>`<i class="${i<=v?'on':''}"></i>`).join('')+'</div>'};
+  const li=a=>'<ul>'+a.map(x=>`<li ${E(esc(x))}</li>`).join('')+'</ul>';
+  const prios=[1,2,3].map(i=>{const s=m['PRIORIDAD '+i]||'';const p=s.indexOf('|');const t=(p>-1?s.slice(0,p):s).replace(/^\s*Qu[eé] mejorar\s*:?\s*/i,'').trim();return`<div class="pr"><div class="n">${i}</div><div><h3 ${E(esc(t))}</h3><p ${E(esc(afterBar(s)))}</p></div></div>`}).join('');
+  const pn=norm(m['PLAN RECOMENDADO']||'');const idx=[['GESTION',0],['CONSULTORIA',1],['ADVISORY',2]].map(([k,i])=>[pn.indexOf(k),i]).filter(x=>x[0]>-1).sort((a,b)=>a[0]-b[0]);const sel=idx.length?idx[0][1]:0;
+  const weeks=[1,2,3,4].map(i=>{const r=(m['SEMANAS']||'').match(new RegExp('Semana\\s*'+i+'\\s*:?\\s*(.*)','i'));return`<div class="wk"><b>Semana ${i}</b><span ${E(esc(r?r[1].trim():''))}</span></div>`}).join('');
+  const hd=n=>`<div class="hd"><b>CHROMA<span>LAB</span></b><i>Auditoría de redes · ${n}</i></div>`,ft='<div class="ft">www.chromalab.com.ar</div>';
+  $('doc').innerHTML=`
+  <section class="page cover"><div class="brand">CHROMA<span>LAB</span></div>
+    <div class="eb">AUDITORÍA GRATUITA DE REDES</div>
+    <h1>Auditoría<em>de tus redes</em></h1>
+    <p class="d">Un diagnóstico claro de cómo se ve tu marca hoy, qué funciona, qué no y qué mejorar primero.</p>
+    <div class="meta"><div><small>Marca</small><span ${E(esc($('marca').value))}</span></div><div><small>Instagram</small><span ${E(esc($('ig').value))}</span></div><div><small>Preparada para</small><span ${E(esc($('para').value))}</span></div><div><small>Fecha</small><span ${E(esc($('fecha').value))}</span></div></div></section>
+  <section class="page">${hd(2)}<h2 class="t">Diagnóstico general</h2>
+    <p class="resumen" ${E(esc(m['RESUMEN']))}</p>
+    <div class="gen"><b ${E(esc(gen))}</b><span>/ 5 · puntaje general</span></div>
+    ${dims.map(x=>`<div class="dim"><div><h3>${x.n}</h3><small style="font-size:8.5pt;color:var(--m)">${x.d}</small></div><div><div class="sc">${esc(x.sc)}<small> / 5</small></div>${bar(x.sc)}</div><p ${E(esc(x.obs))}</p></div>`).join('')}${ft}</section>
+  <section class="page">${hd(3)}<h2 class="t">Qué funciona y qué no</h2>
+    <div class="cols"><div class="box"><h3>Lo que ya funciona</h3>${li(items(m['LO QUE FUNCIONA']))}</div><div class="box mej"><h3>Lo que hay que mejorar</h3>${li(items(m['LO QUE HAY QUE MEJORAR']))}</div></div>${ft}</section>
+  <section class="page">${hd(4)}<h2 class="t">Tus 3 prioridades</h2><p class="lead">Si solo pudieras hacer tres cosas este mes, estas son las que más impacto tendrían.</p>${prios}${ft}</section>
+  <section class="page">${hd(5)}<h2 class="t">Qué haríamos en tus primeros 30 días</h2>
+    <p class="lead">Con lo que encontramos, este es el camino que te recomendamos.</p>
+    <div class="plans">${PLANS.map((p,i)=>`<div class="plan ${i===sel?'on':''}"><b>${p[0]}</b><small>${p[1]}</small><em>Recomendado para vos</em></div>`).join('')}</div>
+    <div class="lab">Por qué este plan para tu marca</div><p class="lead" ${E(esc(m['POR QUE ESTE PLAN']))}</p>
+    <div class="lab">Primeros 30 días</div>${weeks}
+    <div class="cta"><div><h3>¿Lo conversamos?</h3><p>30 minutos, sin costo y sin compromiso.</p></div><a href="https://calendly.com/labid-chroma/30min">Agendar sesión</a></div>${ft}</section>`;
+  $('msg').textContent='Listo. Revisá el resultado más abajo, corregí lo que quieras y tocá «Descargar PDF».';
+  return true;
+}
+$('gen').onclick=()=>{if(build())$('doc').scrollIntoView({behavior:'smooth'})};
+$('pdf').onclick=()=>{if(!$('doc').children.length&&!build())return;document.title='Auditoria-'+($('marca').value.trim().replace(/\s+/g,'-')||'ChromaLab');window.print()};
+</script>
+</body>
+</html>

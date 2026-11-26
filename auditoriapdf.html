@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Auditoría gratuita de tus redes · ChromaLab</title>
+<meta name="description" content="Pedí tu auditoría gratuita en PDF: revisamos tu Instagram y tu marca y te contamos qué funciona, qué no y qué mejorar. La recibís en 3 días hábiles.">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Auditoría gratuita de tus redes · ChromaLab">
+<meta property="og:description" content="Un informe en PDF con lo que funciona, lo que no y qué mejorar primero. Sin costo y sin compromiso.">
+<meta property="og:image" content="https://www.chromalab.com.ar/logo.jpg">
+<meta property="og:locale" content="es_AR">
+<meta property="og:site_name" content="ChromaLab">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700;1,800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #09090f;
+    --bg2: #0f0f1a;
+    --card: #111120;
+    --card-border: rgba(139,92,246,0.22);
+    --purple: #8b5cf6;
+    --purple-light: #a78bfa;
+    --pink: #d946ef;
+    --white: #f0eeff;
+    --muted: #9d9dbd;
+    --text: #c4c4d8;
+    --error: #f87171;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    background-size: 200px;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.5;
+  }
+
+  h1, h2, h3 { font-family: 'Playfair Display', serif; color: var(--white); line-height: 1.1; }
+  em {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    background: linear-gradient(135deg, var(--purple-light), var(--pink));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  :focus-visible { outline: 2px solid var(--purple-light); outline-offset: 3px; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 60px;
+    background: rgba(9,9,15,0.85);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(139,92,246,0.08);
+  }
+  .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .logo-icon { width: 38px; height: 38px; flex-shrink: 0; }
+  .logo-icon img { width: 100%; height: 100%; object-fit: contain; }
+  .logo-text { font-weight: 500; font-size: 1rem; letter-spacing: 0.05em; color: var(--white); }
+  .logo-text span { color: var(--purple); }
+
+  .btn-primary {
+    background: var(--purple); color: #fff; border: none;
+    padding: 10px 22px; border-radius: 30px;
+    font-family: inherit; font-size: 0.875rem; font-weight: 500;
+    text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-primary:hover { background: var(--purple-light); transform: translateY(-1px); }
+
+  /* HERO */
+  #hero {
+    position: relative; z-index: 1;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: center;
+    gap: 64px;
+    padding: 130px 60px 90px;
+    max-width: 1240px;
+    margin: 0 auto;
+  }
+  #hero::before {
+    content: '';
+    position: absolute; top: -120px; left: -260px;
+    width: 640px; height: 640px;
+    background: radial-gradient(circle, rgba(139,92,246,0.16) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .eyebrow { display: flex; align-items: center; gap: 10px; margin-bottom: 26px; }
+  .eyebrow::before {
+    content: ''; width: 8px; height: 8px; border-radius: 50%;
+    background: var(--purple); box-shadow: 0 0 12px var(--purple);
+  }
+  .eyebrow span { font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); }
+
+  h1 { font-size: clamp(2.5rem, 4.6vw, 4rem); margin-bottom: 24px; }
+  .lead { font-size: 1.05rem; max-width: 500px; line-height: 1.75; margin-bottom: 36px; }
+
+  .includes { list-style: none; display: grid; gap: 18px; margin-bottom: 36px; max-width: 500px; }
+  .includes li { display: grid; grid-template-columns: 22px 1fr; gap: 12px; }
+  .includes li > span { color: var(--purple-light); line-height: 1.5; }
+  .includes strong { display: block; color: var(--white); font-weight: 500; font-size: 0.97rem; }
+  .includes small { font-size: 0.88rem; color: var(--muted); }
+
+  .promise {
+    display: inline-flex; flex-wrap: wrap; gap: 6px 18px;
+    font-size: 0.85rem; color: var(--muted);
+  }
+  .promise b { color: var(--purple-light); font-weight: 500; }
+
+  .fade-up { opacity: 0; animation: fadeUp 0.7s ease forwards; }
+  .d1 { animation-delay: 0.05s; } .d2 { animation-delay: 0.15s; } .d3 { animation-delay: 0.3s; } .d4 { animation-delay: 0.45s; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+
+  /* FORM CARD */
+  .form-card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 0 80px rgba(139,92,246,0.12);
+    position: relative;
+  }
+  .form-card::before {
+    content: ''; position: absolute; top: 0; left: 24px; right: 24px; height: 3px;
+    background: linear-gradient(90deg, var(--pink), var(--purple)); border-radius: 0 0 3px 3px;
+  }
+  .form-card h2 { font-size: 1.7rem; margin-bottom: 8px; }
+  .form-card .sub { font-size: 0.92rem; margin-bottom: 28px; }
+
+  .field { margin-bottom: 18px; }
+  .field label { display: flex; justify-content: space-between; align-items: baseline; font-size: 0.85rem; color: var(--text); margin-bottom: 8px; }
+  .field label .opt { font-size: 0.75rem; color: var(--muted); }
+  .field input {
+    width: 100%;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.16);
+    border-radius: 10px;
+    padding: 14px 16px;
+    color: var(--white);
+    font-family: inherit; font-size: 1rem; font-weight: 300;
+    transition: border-color 0.2s;
+  }
+  .field input::placeholder { color: #8585a8; }
+  .field input:focus { outline: none; border-color: rgba(139,92,246,0.7); box-shadow: 0 0 0 3px rgba(139,92,246,0.18); }
+  .field.invalid input { border-color: var(--error); }
+  .hint { font-size: 0.78rem; color: var(--muted); margin-top: 6px; }
+  .err { display: none; font-size: 0.8rem; color: var(--error); margin-top: 6px; }
+  .field.invalid .err { display: block; }
+
+  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+  .btn-submit {
+    width: 100%;
+    background: linear-gradient(135deg, var(--purple), #6d28d9);
+    color: #fff; border: none; padding: 16px; border-radius: 30px;
+    font-family: inherit; font-size: 1rem; font-weight: 500; cursor: pointer;
+    margin-top: 6px;
+    box-shadow: 0 0 30px rgba(139,92,246,0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .btn-submit:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 0 50px rgba(139,92,246,0.45); }
+  .btn-submit:disabled { opacity: 0.7; cursor: progress; }
+  .fine { font-size: 0.78rem; color: var(--muted); text-align: center; margin-top: 14px; }
+  #formError { display: none; color: var(--error); font-size: 0.85rem; margin-top: 14px; padding: 10px 14px; background: rgba(248,113,113,0.08); border: 1px solid rgba(248,113,113,0.25); border-radius: 8px; }
+
+  /* SUCCESS */
+  #success { display: none; text-align: center; padding: 12px 0; }
+  #success .check {
+    width: 56px; height: 56px; margin: 0 auto 20px; border-radius: 50%;
+    display: grid; place-items: center; font-size: 1.5rem; color: #fff;
+    background: linear-gradient(135deg, var(--purple), var(--pink));
+    animation: pop 0.45s ease;
+  }
+  @keyframes pop { from { transform: scale(0.6); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+  #success h2 { margin-bottom: 12px; outline: none; }
+  #success p { margin-bottom: 24px; }
+  #success a { color: var(--purple-light); }
+
+  /* STEPS */
+  #pasos { position: relative; z-index: 1; background: var(--bg2); padding: 90px 60px; }
+  .steps-wrap { max-width: 1000px; margin: 0 auto; }
+  #pasos h2 { font-size: clamp(1.8rem, 3.4vw, 2.6rem); margin-bottom: 48px; text-align: center; }
+  .steps { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; counter-reset: s; }
+  .steps li {
+    counter-increment: s;
+    background: var(--card); border: 1px solid var(--card-border); border-radius: 16px;
+    padding: 28px;
+  }
+  .steps li::before {
+    content: counter(s);
+    font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700;
+    color: var(--purple-light); display: block; margin-bottom: 12px;
+  }
+  .steps h3 { font-size: 1.2rem; margin-bottom: 8px; }
+  .steps p { font-size: 0.92rem; color: var(--muted); }
+  .alt { text-align: center; margin-top: 40px; font-size: 0.92rem; }
+  .alt a { color: var(--purple-light); }
+
+  footer {
+    position: relative; z-index: 1;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    padding: 36px 60px;
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  }
+  footer p { font-size: 0.8rem; color: var(--muted); }
+  footer a.link { color: var(--muted); font-size: 0.875rem; text-decoration: none; }
+  footer a.link:hover { color: var(--white); }
+
+  @media (max-width: 900px) {
+    nav { padding: 14px 24px; }
+    #hero { grid-template-columns: 1fr; gap: 44px; padding: 104px 24px 60px; min-height: 0; }
+    .form-card { padding: 28px 22px; }
+    #pasos { padding: 64px 24px; }
+    .steps { grid-template-columns: 1fr; }
+    footer { flex-direction: column; text-align: center; padding: 32px 24px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .fade-up { animation: none; opacity: 1; }
+    #success .check { animation: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="https://www.chromalab.com.ar" class="logo" aria-label="ChromaLab, ir al inicio">
+    <div class="logo-icon"><img src="logo.jpg" alt=""></div>
+    <span class="logo-text">CHROMA<span>LAB</span></span>
+  </a>
+  <a href="https://calendly.com/labid-chroma/30min" target="_blank" rel="noopener" class="btn-primary">Agendar 30 min</a>
+</nav>
+
+<main>
+<section id="hero">
+  <div>
+    <div class="eyebrow fade-up d1"><span>Auditoría gratuita de redes</span></div>
+    <h1 class="fade-up d1">Una auditoría de tus <em>redes</em>, gratis y en PDF</h1>
+    <p class="lead fade-up d2">Revisamos tu Instagram y, si tenés, tu sitio o tienda online. Te enviamos un informe claro con lo que ya funciona, lo que no y qué mejorar primero.</p>
+
+    <ul class="includes fade-up d3">
+      <li><span>✦</span><div><strong>Cómo se ve tu marca hoy</strong><small>Coherencia visual, tono y primera impresión de tu perfil.</small></div></li>
+      <li><span>✦</span><div><strong>Qué funciona y qué no</strong><small>Un diagnóstico honesto de tu contenido actual.</small></div></li>
+      <li><span>✦</span><div><strong>Mejoras concretas</strong><small>Acciones que podés aplicar desde esta semana.</small></div></li>
+    </ul>
+
+    <p class="promise fade-up d4"><span><b>Sin costo</b></span><span><b>Sin compromiso</b></span><span>Te llega por WhatsApp en <b>3 días hábiles</b></span></p>
+  </div>
+
+  <div class="form-card fade-up d3" id="solicitar">
+    <iframe name="hidden_iframe" id="hidden_iframe" title="Envío del formulario" style="display:none;" onload="iframeLoaded()"></iframe>
+
+    <div id="formWrap">
+      <h2>Pedí tu auditoría</h2>
+      <p class="sub">Completá tus datos y te la enviamos en 3 días hábiles.</p>
+
+      <form id="auditForm" method="POST" target="hidden_iframe" novalidate>
+        <div class="field" id="g-nombre">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" autocomplete="name" placeholder="Ej: Juan García" required>
+          <div class="err">Ingresá tu nombre.</div>
+        </div>
+
+        <div class="field" id="g-whatsapp">
+          <label for="whatsapp">WhatsApp</label>
+          <input type="tel" id="whatsapp" name="whatsapp" autocomplete="tel" inputmode="tel" placeholder="Ej: 351 123 4567" required>
+          <div class="hint">Con código de área, sin 0 ni 15.</div>
+          <div class="err">Ingresá un número válido, solo con números y código de área.</div>
+        </div>
+
+        <div class="field" id="g-instagram">
+          <label for="instagram">Instagram</label>
+          <input type="text" id="instagram" name="instagram" autocapitalize="none" autocorrect="off" spellcheck="false" placeholder="@tumarca o link de tu perfil" required>
+          <div class="err">Ingresá tu usuario (@tumarca) o el link de tu perfil.</div>
+        </div>
+
+        <div class="field" id="g-sitio">
+          <label for="sitio">Sitio web o tienda online <span class="opt">Opcional</span></label>
+          <input type="text" id="sitio" name="sitio" autocapitalize="none" autocorrect="off" spellcheck="false" placeholder="www.tumarca.com">
+          <div class="err">Revisá el link: tiene que ser algo como www.tumarca.com.</div>
+        </div>
+
+        <div class="hp" aria-hidden="true">
+          <label for="empresa_web">No completar este campo</label>
+          <input type="text" id="empresa_web" name="empresa_web" tabindex="-1" autocomplete="off">
+        </div>
+
+        <button type="submit" class="btn-submit" id="btnEnviar">Pedir mi auditoría gratis</button>
+        <div id="formError" role="alert">No pudimos enviar tu solicitud. Revisá tu conexión e intentá de nuevo.</div>
+        <p class="fine">Usamos tus datos solo para enviarte la auditoría.</p>
+      </form>
+    </div>
+
+    <div id="success" role="status">
+      <div class="check" aria-hidden="true">✓</div>
+      <h2 tabindex="-1" id="successTitle">¡Listo, recibimos tu solicitud!</h2>
+      <p>Te enviamos tu auditoría en PDF por WhatsApp en un máximo de 3 días hábiles.</p>
+      <p style="font-size:0.9rem;margin-bottom:0;">¿Querés charlarlo antes? <a href="https://calendly.com/labid-chroma/30min" target="_blank" rel="noopener">Agendá 30 minutos sin costo</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section id="pasos">
+  <div class="steps-wrap">
+    <h2>Cómo funciona</h2>
+    <ol class="steps">
+      <li><h3>Completás el formulario</h3><p>Te lleva menos de un minuto. Solo necesitamos tu contacto y tu perfil.</p></li>
+      <li><h3>Analizamos tu marca</h3><p>La revisamos con criterio estratégico, no solo estético.</p></li>
+      <li><h3>Recibís el PDF</h3><p>Por WhatsApp, en 3 días hábiles. Sin costo y sin compromiso.</p></li>
+    </ol>
+    <p class="alt">¿Preferís hablar en persona? <a href="https://calendly.com/labid-chroma/30min" target="_blank" rel="noopener">Reservá una sesión de 30 minutos</a> o <a href="https://www.chromalab.com.ar/redessociales">conocé cómo gestionamos redes</a>.</p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <a href="https://www.chromalab.com.ar" class="logo" aria-label="ChromaLab">
+    <div class="logo-icon"><img src="logo.jpg" alt=""></div>
+    <span class="logo-text">CHROMA<span>LAB</span></span>
+  </a>
+  <a class="link" href="https://www.chromalab.com.ar">www.chromalab.com.ar</a>
+  <p>© 2026 ChromaLab · Todos los derechos reservados</p>
+</footer>
+
+<script>
+// ─── GOOGLE SHEETS (Apps Script) ───
+// Pegá acá la URL de tu implementación de Apps Script (termina en /exec).
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbys0l5kGFdqgPxUJN3RyGamwd-JvFvGGnT1drEjaBHngicDHL9BI-WasKk4qTF2E4mC/exec";
+
+const form = document.getElementById('auditForm');
+const btn = document.getElementById('btnEnviar');
+const formError = document.getElementById('formError');
+let submitted = false, timer = null;
+
+function setInvalid(id, bad) { document.getElementById(id).classList.toggle('invalid', bad); return !bad; }
+
+function parseInstagram(v) {
+  v = v.trim();
+  const url = v.match(/^(?:https?:\/\/)?(?:www\.)?instagram\.com\/([A-Za-z0-9._]{1,30})\/?(?:[?#].*)?$/i);
+  if (url) return url[1];
+  const user = v.replace(/^@/, '');
+  return /^[A-Za-z0-9._]{1,30}$/.test(user) ? user : null;
+}
+function parseWhatsapp(v) {
+  const digits = v.replace(/\D/g, '');
+  if (digits.length < 8 || digits.length > 15 || /[^\d\s()+\-.]/.test(v)) return null;
+  return (v.trim().startsWith('+') ? '+' : '') + digits;
+}
+function parseSite(v) {
+  v = v.trim();
+  if (!v) return '';
+  if (!/^[^\s@]+\.[^\s@]{2,}(\/\S*)?$/.test(v.replace(/^https?:\/\//i, ''))) return null;
+  return /^https?:\/\//i.test(v) ? v : 'https://' + v;
+}
+
+form.addEventListener('submit', function (e) {
+  formError.style.display = 'none';
+  const nombre = form.nombre.value.trim();
+  const wa = parseWhatsapp(form.whatsapp.value);
+  const ig = parseInstagram(form.instagram.value);
+  const site = parseSite(form.sitio.value);
+
+  const checks = [
+    setInvalid('g-nombre', nombre.length < 2),
+    setInvalid('g-whatsapp', wa === null),
+    setInvalid('g-instagram', ig === null),
+    setInvalid('g-sitio', site === null)
+  ];
+  if (checks.includes(false)) {
+    e.preventDefault();
+    const first = form.querySelector('.field.invalid input');
+    if (first) first.focus();
+    return;
+  }
+
+  // Valores normalizados que llegan al Sheet
+  form.nombre.value = nombre;
+  form.whatsapp.value = wa;
+  form.instagram.value = 'https://instagram.com/' + ig;
+  form.sitio.value = site;
+
+  if (APPS_SCRIPT_URL.indexOf('PEGAR_AQUI') === 0) console.warn('Falta configurar APPS_SCRIPT_URL en auditoria.html');
+  form.action = APPS_SCRIPT_URL;
+
+  submitted = true;
+  btn.disabled = true;
+  btn.textContent = 'Enviando…';
+  timer = setTimeout(function () {
+    if (!submitted) return;
+    submitted = false;
+    btn.disabled = false;
+    btn.textContent = 'Pedir mi auditoría gratis';
+    formError.style.display = 'block';
+  }, 20000);
+});
+
+function iframeLoaded() {
+  if (!submitted) return;
+  submitted = false;
+  clearTimeout(timer);
+  document.getElementById('formWrap').style.display = 'none';
+  document.getElementById('success').style.display = 'block';
+  document.getElementById('successTitle').focus();
+}
+</script>
+</body>
+</html>
